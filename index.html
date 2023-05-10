@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>Learning JS V9</title>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+   
+   
+  </style>
+</head>
+
+<body>
+  <div class="title-wrapper">
+  <p class="main-title">Learning JS</p>
+  <div class="divider"></div>
+  <div class="divider2"></div>
+  <div class="divider3"></div>
+  <div class="searchbar">
+    <input class="searchInput" type="text" id="searchInput" placeholder="Search...">
+
+    <button class="resetButton" id="resetButton">Reset</button>
+    <button class="encodeButton" onclick="openEncoder()">Open Encoder</button>
+    <button class="consoleEditorButton" onclick="openConsoleEditor()">Editor & Console</button>
+
+    <select id="categoryFilter" multiple>
+      <!-- Categories will be populated dynamically -->
+    </select>
+  </div>
+
+  <!-- Can use this div to add content between the features and the code results -->
+  <div style="margin-left: 104px; margin-top: 12px; margin-right: 100px;font-size: 13px;"></div>
+<div>
+  <p class="results" id="resultsCount"></p>
+</div>
+</div>
+ 
+  
+
+  <div id="code-container"></div>
+  
+  <div class="buttons-wrapper">
+    <div class="pagination">
+      <button class="previousButton " id="previousButton" disabled>&#8592;&nbsp;&nbsp;&nbsp;Previous</button>
+      <button class="nextButton " id="nextButton">Next&nbsp;&nbsp;&#8594;</button>
+    </div> 
+    <div class="divider4"></div>
+    <button id="resetButtonBottom" class="resetButtonBottom">Reset search!</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.min.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+title,code,categories
+@ %nl% does as <br> @ opening line comments  &#x2c is comma
+@
+@ if a category appears duplicate, check the extra spaces
+Using template literals to concatenate strings and variables,let firstName = "John";%nl%let lastName = "Doe";%nl%let fullName = `${firstName} ${lastName}`;%nl%console.log(fullName); // Output: "John Doe",JavaScript;Strings;Template Literals,
+
+Using the Array.every method to check if all elements in an array pass a test,let numbers = [10&#x2c 20&#x2c 30&#x2c 40&#x2c 50];%nl%let allGreaterThan5 = numbers.every((num) => num > 5);%nl%console.log(allGreaterThan5); // Output: true,JavaScript;Arrays;Methods,
+
+Using a Set to remove duplicate values from an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 2&#x2c 1&#x2c 4&#x2c 5&#x2c 4];%nl%let uniqueNumbers = [...new Set(numbers)];%nl%console.log(uniqueNumbers); // Output: [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5],JavaScript;Arrays;Set,
+
+Using the Array.includes method to check if an array contains a specific value,let fruits = ["apple"&#x2c "banana"&#x2c "orange"&#x2c "grape"];%nl%let hasBanana = fruits.includes("banana");%nl%console.log(hasBanana); // Output: true,JavaScript;Arrays;Methods,
+
+Using object destructuring to extract values from an object,let person = {name: "John"&#x2c age: 30&#x2c city: "New York"};%nl%let {name&#x2c age} = person;%nl%console.log(name); // Output: "John"%nl%console.log(age); // Output: 30,JavaScript;Objects;Destructuring,
+
+Using the Array.prototype.reduce method to accumulate a value from an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let sum = numbers.reduce((accumulator&#x2c currentValue) => accumulator + currentValue&#x2c 0);%nl%console.log(sum); // Output: 15,JavaScript;Arrays;Methods,
+
+Using the Array.prototype.filter method to filter elements of an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let evenNumbers = numbers.filter((num) => num % 2 === 0);%nl%console.log(evenNumbers); // Output: [2&#x2c 4],JavaScript;Arrays;Methods,
+
+Using the Array.prototype.map method to iterate over an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let doubled = numbers.map((num) => num * 2);%nl%console.log(doubled); // Output: [2&#x2c 4&#x2c 6&#x2c 8&#x2c 10],JavaScript;Arrays;Methods,
+
+Using the Object.values method to get an array of object values,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%let values = Object.values(person);%nl%console.log(values); // Output: ["John"&#x2c "Doe"&#x2c 30],JavaScript;Objects;Methods,
+
+Using the Object.values method to get an array of object values,person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30}; %nl%let values = Object.values(person); %nl%console.log(values); // Output: ["John"&#x2c "Doe"&#x2c 30],JavaScript;Objects;Methods,
+
+Creating a JavaScript object,let person = { %nl% firstName: "John"&#x2c; %nl% lastName: "Doe"&#x2c; %nl% age: 30 %nl%}; %nl%console.log(person);,JavaScript;Objects,
+
+Adding properties to an object,let person = {}; %nl%person.firstName = "John"; %nl%person.lastName = "Doe"; %nl%person.age = 30; %nl%console.log(person);,JavaScript;Objects,
+Basic for loop,for (let i = 0&#x2c; i < 10&#x2c; i++) { %nl% console.log(i); %nl%},JavaScript;Loops,
+Basic while loop,let i = 0; %nl%while (i < 10) { %nl% console.log(i); %nl% i++; %nl%},JavaScript;Loops,
+
+Array forEach method,const arr = [1&#x2c; 2&#x2c; 3]; %nl%arr.forEach(function (item) { %nl% console.log(item); %nl%});,JavaScript;Arrays;Loops,
+
+Anonymous function,const myFunc = function () { %nl% console.log("This is an anonymous function"); %nl%}; %nl%myFunc();,JavaScript;Functions,
+Arrow function,const myFunc = () => { %nl% console.log("This is an arrow function"); %nl%}; %nl%myFunc();,JavaScript;Functions;ES6,
+
+Adding items to an array,const arr = []; %nl%arr.push(1); %nl%arr.push(2); %nl%arr.push(3); %nl%console.log(arr);,JavaScript;Arrays,
+Accessing array elements,const arr = [1&#x2c; 2&#x2c; 3]; %nl%console.log(arr[0]); %nl%console.log(arr[1]); %nl%console.log(arr[2]);,JavaScript;Arrays,
+
+Basic if-else statement,let number = 42; %nl%if (number % 2 === 0) { %nl% console.log("Even"); %nl%} else { %nl% console.log("Odd"); %nl%},JavaScript;Control Flow,
+
+Creating a promise,const myPromise = new Promise((resolve&#x2c; reject) => { %nl% setTimeout(() => { %nl% resolve("Success!"); %nl% }&#x2c; 1000); %nl%}); %nl%myPromise.then((value) => console.log(value));,JavaScript;Promises;Asynchronous,
+
+Using async/await,async function myAsyncFunction() { %nl% const result = await new Promise((resolve) => setTimeout(() => resolve("Success!")&#x2c; 1000)); %nl% console.log(result); %nl%} %nl%myAsyncFunction();,JavaScript;Async/Await;Asynchronous,
+
+Basic switch statement,const animal = "cat"; %nl%switch (animal) { %nl% case "dog": %nl% console.log("Woof!"); %nl% break; %nl% case "cat": %nl% console.log("Meow!"); %nl% break; %nl% default: %nl% console.log("Unknown animal"); %nl%},JavaScript;Control Flow,
+
+Using the map method,const arr = [1&#x2c; 2&#x2c; 3]; %nl%const newArr = arr.map((item) => item * 2); %nl%console.log(newArr);,JavaScript;Arrays;Higher-order Functions,
+
+Using the filter method,const arr = [1&#x2c; 2&#x2c; 3&#x2c; 4]; %nl%const evenArr = arr.filter((item) => item % 2 === 0); %nl%console.log(evenArr);,JavaScript;Arrays;Higher-order Functions,
+
+Creating a JavaScript class,class Person { %nl% constructor(firstName&#x2c; lastName) { %nl% this.firstName = firstName; %nl% this.lastName = lastName; %nl% } %nl% fullName() { %nl% return this.firstName + " " + this.lastName; %nl% } %nl%} %nl%const john = new Person("John"&#x2c; "Doe"); %nl%console.log(john.fullName());,JavaScript;Classes;ES6,
+
+Using try-catch,try { %nl% console.log(variableThatDoesNotExist); %nl%} catch (error) { %nl% console.log("An error occurred: " + error.message); %nl%},JavaScript;Error Handling,
+
+Adding event listener,document.getElementById("myButton").addEventListener("click"&#x2c; () => { %nl% console.log("Button clicked!"); %nl%});,JavaScript;DOM;Event Handling,
+
+Using Array.reduce,let numbers = [1&#x2c; 2&#x2c; 3&#x2c; 4]; %nl%const sum = numbers.reduce((accumulator&#x2c; currentValue) => accumulator + currentValue&#x2c; 0); %nl%console.log(sum);,JavaScript;Arrays;Methods,
+
+String Interpolation,let name = "John"; %nl%let age = 30; %nl%let message = `Hello&#x2c; my name is ${name} and I am ${age} years old.`; %nl%console.log(message);,JavaScript;Strings;Template literals,
+
+Array Destructuring,let numbers = [1&#x2c; 2&#x2c; 3]; %nl%const [first&#x2c; second&#x2c; third] = numbers; %nl%console.log(first&#x2c; second&#x2c; third);,JavaScript;Arrays;Destructuring,
+
+Spread Operator with Arrays,let arr1 = [1&#x2c; 2&#x2c; 3]; %nl%let arr2 = [4&#x2c; 5&#x2c; 6]; %nl%let combinedArr = [...arr1&#x2c; ...arr2]; %nl%console.log(combinedArr);,JavaScript;Arrays;Spread Operator,
+
+Spread Operator with Objects,let obj1 = {a: 1&#x2c; b: 2}; %nl%let obj2 = {c: 3&#x2c; d: 4}; %nl%let combinedObj = {...obj1&#x2c; ...obj2}; %nl%console.log(combinedObj);,JavaScript;Objects;Spread Operator,
+
+Using Array.find,let numbers = [1&#x2c; 2&#x2c; 3&#x2c; 4]; %nl%const found = numbers.find(element => element > 2); %nl%console.log(found);,JavaScript;Arrays;Methods,
+
+Using Array.some,let numbers = [1&#x2c; 2&#x2c; 3&#x2c; 4]; %nl%const hasEvenNumber = numbers.some(number => number % 2 === 0); %nl%console.log(hasEvenNumber);,JavaScript;Arrays;Methods,
+
+Using the ternary operator,let age = 18; %nl%let message = age >= 18 ? "You are an adult" : "You are not an adult"; %nl%console.log(message);,JavaScript;Control Flow,
+
+Using the Math object to generate a random number,let randomNum = Math.floor(Math.random() * 10) + 1; %nl%console.log(randomNum);,JavaScript;Math Object,
+
+Using the typeof operator to check the type of a variable,let myVar = "Hello"; %nl%console.log(typeof myVar); %nl%myVar = 42; %nl%console.log(typeof myVar);,JavaScript;Data Types,
+
+Using the Date object to get the current date and time,let today = new Date(); %nl%console.log(today);,JavaScript;Date Object,
+
+Using the setTimeout method to delay the execution of a function,function delayedFunction() { %nl% console.log("This function was delayed by 3 seconds"); %nl%} %nl%setTimeout(delayedFunction&#x2c 3000);,JavaScript;Asynchronous,
+
+Using the setInterval method to execute a function repeatedly,let counter = 0; %nl%function incrementCounter() { %nl% console.log(counter++); %nl%} %nl%let intervalId = setInterval(incrementCounter&#x2c 1000); %nl%// To stop the interval: %nl%// clearInterval(intervalId);,JavaScript;Asynchronous,
+
+Using the slice method to extract a portion of an array,let arr = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5]; %nl%let slicedArr = arr.slice(2&#x2c 4); %nl%console.log(slicedArr);,JavaScript;Arrays;Slice Method,
+
+Using the splice method to add or remove elements from an array,let arr = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5]; %nl%arr.splice(2&#x2c 1); %nl%console.log(arr); // Output: [1&#x2c 2&#x2c 4&#x2c 5] %nl%arr.splice(2&#x2c 0&#x2c 3); %nl%console.log(arr); // Output: [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5],JavaScript;Arrays;Splice Method,
+
+Using the concat method to combine arrays,let arr1 = [1&#x2c 2&#x2c 3]; %nl%let arr2 = [4&#x2c 5&#x2c 6]; %nl%let combinedArr = arr1.concat(arr2); %nl%console.log(combinedArr);,JavaScript;Arrays;Concat Method,
+
+Iterating over object properties using a for...in loop,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30}; %nl%for (let property in person) { %nl% console.log(${property}: ${person[property]}); %nl%},JavaScript;Objects;Loops,
+
+Using the slice method to get a portion of an array,let arr = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5]; %nl%let slicedArr = arr.slice(1&#x2c 3); %nl%console.log(slicedArr); // Output: [2&#x2c 3],JavaScript;Arrays;Slice Method,
+
+Using the Math.round method to round a number to the nearest integer,let num = 3.14; %nl%let roundedNum = Math.round(num); %nl%console.log(roundedNum); // Output: 3,JavaScript;Math;Methods,
+
+Using the Math.floor method to round a number down to the nearest integer,let num = 3.99; %nl%let roundedNum = Math.floor(num); %nl%console.log(roundedNum); // Output: 3,JavaScript;Math;Methods,
+
+Using the Math.ceil method to round a number up to the nearest integer,let num = 3.01; %nl%let roundedNum = Math.ceil(num); %nl%console.log(roundedNum); // Output: 4,JavaScript;Math;Methods,
+
+Using the Date object to get the current date and time,let currentDate = new Date(); %nl%console.log(currentDate); // Output: Mon May 10 2023 12:00:00 GMT-0400 (Eastern Daylight Time),JavaScript;Date;Objects,
+
+Using the Date object to get a specific date and time,let specificDate = new Date("May 10 2022 12:00:00"); %nl%console.log(specificDate); // Output: Tue May 10 2022 12:00:00 GMT-0400 (Eastern Daylight Time),JavaScript;Date;Objects,
+
+Using the Object.keys method to get an array of object keys,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30}; %nl%let keys = Object.keys(person); %nl%console.log(keys); // Output: ["firstName"&#x2c "lastName"&#x2c "age"],JavaScript;Objects;Methods,
+
+Using the Object.values method to get an array of object values,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30}; %nl%let values = Object.values(person); %nl%console.log(values); // Output: ["John"&#x2c "Doe"&#x2c 30],JavaScript;Objects;Methods,
+
+Using the Object.entries method to get an array of object key-value pairs,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30}; %nl%let entries = Object.entries(person); %nl%console.log(entries); // Output: [["firstName"&#x2c "John"]&#x2c ["lastName"&#x2c "Doe"]&#x2c ["age"&#x2c 30]],JavaScript;Objects;Methods,
+
+@
+@
+@ 

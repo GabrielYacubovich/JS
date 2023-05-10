@@ -1,0 +1,266 @@
+﻿body {
+  margin: 0 !important;
+}
+pre {
+  position: relative;
+  font-size: 14px;
+  border-radius: 7px;
+  margin-left: 100px !important;
+  margin-right: 100px !important;
+  padding-top: 15px !important;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  max-width: 100%;             /* Set the max-width of the content */
+}
+code {
+  font-size: 15px !important;
+  margin: -2px !important;
+   max-width: 100%;
+  word-wrap: break-word; 
+}
+#code-container {
+  padding-top:220px;
+  margin-bottom: 400px; 
+  overflow: hidden;
+}
+
+.snippet-code {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  padding-left: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 50px;
+}
+.main-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+  
+}
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding-top: 40px;
+  margin-bottom: 10px;
+  padding-left: 112px;
+}
+.copyButton {
+  font-size: 14px;
+  display: block;
+  margin-left: -5px;
+  margin-top:10px;  
+  background-color: white;
+  border-radius: 15px;
+  padding-bottom: 2px;
+  cursor: pointer;
+  padding: 3px 11px 4px 11px ;
+  width: 60px;
+}
+.searchbar {
+  padding-left: 100px;
+  margin-right: 25px;
+}
+.searchInput {
+padding: 5.5px;
+width: 200px;
+margin-right:10px;
+border-radius: 15px;
+}
+
+.divider {
+  width: calc(100% - 210px);
+  margin: 7px 100px;
+  height: 2px;
+  background-color: red;
+  
+}
+.divider2 {
+  width: calc(100% - 240px);
+  margin: 5px 100px 7px;
+  height: 2px;
+  background-color: red;
+}
+.divider3 {
+  width: calc(100% - 270px);
+  margin: 5px 100px 20px;
+  height: 2px;
+  background-color: red;
+}
+.divider4 {
+  width: calc(100% - 200px);
+  margin: 30px 90px 30px 100px;
+  height: 2px;
+  background-color: red;
+}
+#categoryFilter {
+  margin-right: 85px;
+  float:top;
+  float:right;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 22%;
+  margin-top: 18px; 
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2px 4px;
+}
+
+.previousButton {
+  display: none;
+  border-radius: 15px;
+  margin-left: 120px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding:5px 9px
+}
+
+.nextButton {
+  display: none;
+   float: right;
+   border-radius: 15px;
+   margin-right: 120px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+   padding:5px 9px
+
+}
+.resetButtonBottom {
+  border-radius: 15px;
+  display: block;
+  padding:6px 19px;
+  margin: 0 auto;
+  
+}
+.resetButton {
+  border-radius: 15px;
+  margin-top: 20px;
+  padding:5px 9px;
+  margin-right:10px;
+  background-color: rgb(231, 251, 244);
+
+}
+
+.encodeButton {
+  border-radius: 15px;
+  margin-top: 20px;
+  padding:5px 9px;
+  margin-right:10px;
+  background-color: rgb(255, 232, 232);
+}
+
+.consoleEditorButton {
+  border-radius: 15px;
+  margin-top: 20px;
+  padding:5px 9px;
+  margin-right:10px;
+  background-color: rgb(255, 255, 255);
+}
+.buttons-wrapper {
+  position: fixed ;
+  bottom: 0;
+  left: 0 ;
+  right: 0;
+  background-color: #ffffff;
+  padding:0px 8px 30px;
+}
+.title-wrapper {
+  z-index: 10; /* Give it a higher z-index value to place it on top of the other elements */
+
+  width: 100%;
+  position: fixed ;
+  background-color: #ffffff;
+  padding:0px 8px 30px;
+}
+
+.results {
+  margin-left: 5px; 
+  font-size: 13px; 
+  color: rgb(103, 103, 103);
+  padding-top: 0px !important;
+
+}
+
+@media screen and (max-width: 950px) {
+  #categoryFilter {
+    display: none;
+  }
+  #code-container {
+    padding-top:180px;
+    margin-bottom: 400px; 
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 700px) {
+  #categoryFilter {
+    display: none;
+  }
+  #code-container {
+    padding-top:220px;
+    margin-bottom: 400px; 
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 600px) {
+  #categoryFilter {
+    display: none;
+  }
+  .searchbar {
+    padding-left: 20px;
+    margin-right: 20px;
+  }
+  .main-title {
+    font-size: 22px;
+    padding-left: 20px;
+    margin-right: 20px;
+  }
+  .divider {
+   display: none;
+  }
+  .divider2 {
+    display: none;
+  } 
+  .divider3 {
+    display: none;
+  }
+  .divider4 {
+    display: none;
+  }
+  .consoleEditorButton {
+   display: none;
+  }
+  .encodeButton{
+    display: none;
+  }
+  #code-container {
+    padding-top:140px;
+    margin-bottom: 400px; 
+    overflow: hidden;
+  }
+  .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  pre {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    
+  }
+  code {
+    font-size: 12px !important;
+    margin: -2px !important;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+}
