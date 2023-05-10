@@ -299,6 +299,12 @@ border-radius: 15px;
   .title-wrapper {
     padding: 0px 8px 0px;
   }
+  .consoleEditorButton{
+    display: none;
+  }
+  .encodeButton {
+    display: none;
+  }
 }
 @media screen and (max-width: 340px) {
   #code-container {
