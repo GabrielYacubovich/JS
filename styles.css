@@ -199,7 +199,7 @@ border-radius: 15px;
     overflow: hidden;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   #categoryFilter {
     display: none;
   }
@@ -207,6 +207,10 @@ border-radius: 15px;
     padding-top:220px;
     margin-bottom: 400px; 
     overflow: hidden;
+  }
+  .title-wrapper{
+    position: relative  ;
+
   }
 }
 @media screen and (max-width: 600px) {
@@ -305,8 +309,9 @@ border-radius: 15px;
   .encodeButton {
     display: none;
   }
-   .title-wrapper{
+  .title-wrapper{
     position: relative  ;
+
   }
 }
 @media screen and (max-width: 340px) {
