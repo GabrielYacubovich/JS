@@ -222,6 +222,25 @@ border-radius: 15px;
     padding-left: 20px;
     margin-right: 20px;
   }
+  .dividerMobile{
+    height: 2px;
+  background-color: red;
+  margin:10px 30px 10px 20px ;
+  
+  }
+  .dividerMobile1{
+    height: 2px;
+  background-color: red;
+  margin:10px 50px 10px 20px ;
+  
+  }
+  
+  .dividerMobile2{
+    height: 2px;
+  background-color: red;
+  margin:10px 70px 10px 20px ;
+  
+  }
   .divider {
    display: none;
   }
