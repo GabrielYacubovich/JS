@@ -218,7 +218,7 @@ border-radius: 15px;
     margin-right: 20px;
   }
   .main-title {
-    font-size: 28px;
+    font-size: 32px;
     padding-left: 20px;
     margin-right: 20px;
   }
@@ -260,7 +260,7 @@ border-radius: 15px;
     display: none;
   }
   #code-container {
-    padding-top:180px;
+    padding-top:160px;
     margin-bottom: 400px; 
     overflow: hidden;
   }
@@ -284,12 +284,26 @@ border-radius: 15px;
   }
   .resetButton{
     font-size: 14px;
+    
   }
   .resetButtonBottom {
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 13px;
+  
   }
   .searchInput{
     font-size: 14px;
+  }
+  .buttons-wrapper{
+    padding: 10px;
+  }
+  .title-wrapper {
+    padding: 0px 8px 0px;
+  }
+}
+@media screen and (max-width: 340px) {
+  #code-container {
+    padding-top:190px;
+    margin-bottom: 400px; 
+    overflow: hidden;
   }
 }
