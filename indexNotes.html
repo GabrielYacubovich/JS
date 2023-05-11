@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Note Taking App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-section input,
+    .input-section textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .input-section button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .notes-section select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .notes-section #displayNote {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #displayNote {
+      margin-top: 20px;
+    }
+
+    #displayTitle {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #displayContent {
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Note Taking App</h1>
+    <div class="input-section">
+      <input type="text" id="noteTitle" placeholder="Title">
+      <textarea id="noteContent" placeholder="Write your note here"></textarea>
+      <button id="saveBtn">Save Note</button>
+    </div>
+    <div class="notes-section">
+      <h2>Saved Notes</h2>
+      <select id="noteList"></select>
+      <div id="displayNote">
+        <h3>Title: <span id="displayTitle"></span></h3>
+        <pre id="displayContent"></pre>
+        <button id="removeBtn">Remove Note</button><button id="removeAllBtn">Remove All</button>
+
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    // Retrieve the saved notes from local storage
+    function getSavedNotes() {
+      let notes = localStorage.getItem('notes');
+      if (notes) {
+        return JSON.parse(notes);
+      } else {
+        return [];
+      }
+    }
+
+    // Save the notes to local storage
+    function saveNotes(notes) {
+      localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
+    // Add a new note to the saved notes
+    function addNote() {
+      let titleInput = document.getElementById('noteTitle');
+      let contentInput = document.getElementById('noteContent');
+
+      let note = {
+        title: titleInput.value,
+        content: contentInput.value
+      };
+
+      let notes = getSavedNotes();
+      notes.push(note);
+      saveNotes(notes);
+
+      titleInput.value = '';
+      contentInput.value = '';
+      displayNotes();
+    }
+
+    // Remove the selected note
+    function removeNote() {
+      let noteList = document.getElementById('noteList');
+      let selectedNoteIndex = noteList.selectedIndex;
+
+      if (selectedNoteIndex !== -1) {
+        let notes = getSavedNotes();
+        notes.splice(selectedNoteIndex, 1);
+        saveNotes(notes);
+        displayNotes();
+      }
+    }
+// Remove all notes
+function removeAllNotes() {
+  localStorage.removeItem('notes');
+  displayNotes();
+}
+
+    // Display the notes in the select dropdown
+    function displayNotes() {
+      let noteList = document.getElementById('noteList');
+      noteList.innerHTML = '';
+
+      let notes = getSavedNotes();
+      notes.forEach(function(note, index) {
+        let option = document.createElement('option');
+        option.value = index;
+        option.text = note.title;
+        noteList.appendChild(option);
+      });
+
+      noteList.selectedIndex = -1;
+      displaySelectedNote();
+    }
+// Display the selected note
+function displaySelectedNote() {
+  let noteList = document.getElementById('noteList');
+  let displayTitle = document.getElementById('displayTitle');
+  let displayContent = document.getElementById('displayContent');
+
+  if (noteList.selectedIndex !== -1) {
+    let notes = getSavedNotes();
+    let selectedNote = notes[noteList.selectedIndex];
+    displayTitle.textContent = selectedNote.title;
+    displayContent.innerText = selectedNote.content;
+  } else {
+    displayTitle.textContent = '';
+    displayContent.innerText = '';
+  }
+}
+
+
+
+    // Event listeners
+    document.getElementById('saveBtn').addEventListener('click', addNote);
+    document.getElementById('noteList').addEventListener('change', displaySelectedNote);
+    document.getElementById('removeBtn').addEventListener('click', removeNote);
+    document.getElementById('removeAllBtn').addEventListener('click', removeAllNotes);
+
+    // Initial setup
+    displayNotes();
+  </script>
+</body>
+</html>
