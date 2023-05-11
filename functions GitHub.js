@@ -238,27 +238,3 @@ export function openConsoleEditor() {
   window.open(consoleEditorUrl, '_blank');
 }
 
-// Generate a random YouTube video URL with "rubber duck" in its name
-function generateRandomVideoURL() {
-  const keyword = "rubber duck";
-  const apiKey = "AIzaSyBcGpCSq0G8j5pMklyd48Pkr7EAlaRdZ8A";
-  const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${encodeURIComponent(keyword)}&type=video&key=${apiKey}`;
-
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      const videos = data.items;
-      const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-      const videoId = randomVideo.id.videoId;
-      const videoURL = `https://www.youtube.com/watch?v=${videoId}`;
-      window.open(videoURL, "_blank");
-    })
-    .catch(error => {
-      console.error("Error fetching YouTube API:", error);
-    });
-}
-
-// Attach event listener to the button
-const randomVideoImage = document.getElementById("randomVideoImage");
-randomVideoImage.addEventListener("click", generateRandomVideoURL);
-
