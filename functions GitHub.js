@@ -143,12 +143,7 @@ export function filterByCategory() {
   applyFilterAndPagination(container, snippetsData, categoryFilterElement, currentPage);
 }
 
-
-
-
-
 let allSnippetsData;
-
 
 export async function createSnippets(container, snippetDataList, categoryFilterElement, currentPage) {
   snippetDataList.sort((a, b) => a.title.localeCompare(b.title));
@@ -238,3 +233,12 @@ export function openConsoleEditor() {
   window.open(consoleEditorUrl, '_blank');
 }
 
+export function notesButton() {
+  const notesUrl = './indexNotes.html';
+  window.open(notesUrl, '_blank');
+}
+
+
+
+  
+  
