@@ -229,12 +229,12 @@ export function updatePaginationButtons(currentPage) {
 
 export function openEncoder() {
   // Replace 'URL_TO_YOUR_ENCODER_HTML_FILE' with the URL to your encoder HTML file
-  const encoderUrl = 'https://github.com/gabrielyacubovich/repository/blob/main/username/JS/root/indexEditor.indexEncoder.html';
+  const encoderUrl = 'https://gabrielyacubovich.github.io/JS/indexEncoder.html';
   window.open(encoderUrl, '_blank');
 }
 
 export function openConsoleEditor() {
   // Replace 'URL_TO_YOUR_CONSOLE_EDITOR_HTML_FILE' with the URL to your console editor HTML file
-  const consoleEditorUrl = 'https://github.com/gabrielyacubovich/repository/blob/main/username/JS/root/indexEditor.html';
+  const consoleEditorUrl = 'https://gabrielyacubovich.github.io/JS/indexEditor.html';
   window.open(consoleEditorUrl, '_blank');
 }
