@@ -233,8 +233,13 @@ export function openEncoder() {
   window.open(encoderUrl, '_blank');
 }
 
+export function openEncoder() {
+  const encoderUrl = './indexEncoder.html';
+  window.open(encoderUrl, '_blank');
+}
+
 export function openConsoleEditor() {
-  // Replace 'URL_TO_YOUR_CONSOLE_EDITOR_HTML_FILE' with the URL to your console editor HTML file
-  const consoleEditorUrl = 'https://gabrielyacubovich.github.io/JS/indexEditor.html';
+  const consoleEditorUrl = './indexEditor.html';
   window.open(consoleEditorUrl, '_blank');
 }
+
