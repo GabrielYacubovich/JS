@@ -1,4 +1,4 @@
-﻿body {
+body {
   margin: 0 !important;
 }
 pre {
@@ -99,7 +99,7 @@ border-radius: 15px;
 }
 .divider4 {
   width: calc(100% - 200px);
-  margin: 30px 90px 30px 100px;
+  margin: 20px 90px 20px 100px;
   height: 2px;
   background-color: red;
 }
@@ -166,13 +166,22 @@ border-radius: 15px;
   margin-right:10px;
   background-color: rgb(230, 232, 251);
 }
+
+.notesButton {
+  border-radius: 15px;
+  margin-top: 20px;
+  padding:5px 9px;
+  margin-right:10px;
+  background-color: rgb(253, 252, 217);
+}
 .buttons-wrapper {
   position: fixed ;
   bottom: 0;
   left: 0 ;
   right: 0;
   background-color: #ffffff;
-  padding:0px 8px 30px;
+  padding: 20px 10px;
+  margin-bottom:0px;
 }
 .title-wrapper {
   z-index: 10; /* Give it a higher z-index value to place it on top of the other elements */
@@ -180,7 +189,7 @@ border-radius: 15px;
   width: 100%;
   position: fixed ;
   background-color: #ffffff;
-  padding:0px 8px 0px;
+  padding:0px 8px 10px;
 }
 
 .results {
@@ -191,6 +200,7 @@ border-radius: 15px;
   
 }
 
+
 @media screen and (max-width: 950px) {
   #categoryFilter {
     display: none;
@@ -200,6 +210,21 @@ border-radius: 15px;
     margin-bottom: 400px; 
     overflow: hidden;
   }
+  .buttons-wrapper{
+    padding: 20px 10px;
+  }
+.notesButton{
+  font-size: 12px !important;
+}
+.consoleEditorButton{
+  font-size: 12px !important;
+}
+.encodeButton{
+  font-size: 12px !important;
+}
+.resetButton{
+  font-size: 12px !important;
+}
 }
 @media screen and (max-width: 750px) {
   #categoryFilter {
@@ -211,6 +236,9 @@ border-radius: 15px;
     overflow: hidden;
   }
   .consoleEditorButton{
+    display: none;
+  }
+  .notesButton{
     display: none;
   }
   .encodeButton {
@@ -225,7 +253,13 @@ border-radius: 15px;
     padding-left: 100px;
     padding-right: 100px;
   }
+  .title-wrapper {
+       padding: 0px 0px 0px;
 }
+.buttons-wrapper{
+  padding: 20px 10px;
+}
+  }
 @media screen and (max-width: 600px) {
   #categoryFilter {
     display: none;
@@ -311,10 +345,10 @@ border-radius: 15px;
     font-size: 14px;
   }
   .buttons-wrapper{
-    padding: 10px;
+    padding: 20px 10px;
   }
   .title-wrapper {
-    padding: 0px 8px 0px;
+    padding: 0px 8px 10px;
   }
   .consoleEditorButton{
     display: none;
