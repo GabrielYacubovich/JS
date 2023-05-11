@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js" ></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Code Editor and Console</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #editor {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    resize: vertical;
+  }
+  #console {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    background-color: #f8f8f8;
+    resize: vertical;
+  }
+  button {
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<h1>Simple Code Editor</h1>
+<div id="editor"></div>
+
+<button id="runButton">Run Code</button>
+<h2>Console</h2>
+<pre id="console"></pre>
+<script>
+ const editorElement = document.getElementById('editor');
+const editor = CodeMirror(editorElement, {
+  mode: 'javascript',
+  lineNumbers: true,
+  theme: 'default'});
+  const runButton = document.getElementById('runButton');
+  const consoleElement = document.getElementById('console');
+
+  function clearConsole() {
+    consoleElement.textContent = '';
+  }
+
+  function printToConsole(message) {
+    consoleElement.textContent += message + '\n';
+  }
+
+  const originalConsoleLog = console.log;
+  console.log = function(message) {
+    originalConsoleLog(message);
+    printToConsole(message);
+  };
+
+  runButton.addEventListener('click', () => {
+    clearConsole();
+    try {
+      const code = editor.getValue();
+      const script = document.createElement('script');
+      script.textContent = code;
+      document.body.appendChild(script);
+      document.body.removeChild(script);
+    } catch (error) {
+      console.log('Error: ' + error);
+    }
+  });
+</script>
+</body>
+</html>
