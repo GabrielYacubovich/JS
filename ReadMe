@@ -1,6 +1,5 @@
-Added Console and responsive query for Filters
-
+added about 150 cases of content, result counts now counts filters results, filters min results to prevent long category list of single cases, tweaks in design and functionality.
 
 Things to improve:
-Resolve the pagination conflicts with filters and search
+Resolve the pagination conflicts with filters and search o remove pagination logic.
 Adding Import Export

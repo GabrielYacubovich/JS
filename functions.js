@@ -23,7 +23,7 @@ function applyFilterAndPagination(container, snippetDataList, categoryFilterElem
   });
 
   // Apply pagination
-  const itemsPerPage = 100;
+  const itemsPerPage = 10000;
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const visibleSnippets = filteredSnippets.slice(startIndex, endIndex);
@@ -96,13 +96,23 @@ async function fetchCSVData(file) {
 
 // function to create categories 
 function getUniqueCategories(snippetsData) {
-  const categoriesSet = new Set();
+  const categoriesCount = {};
   snippetsData.forEach(snippet => {
-    if (snippet.categories) { // Add a check to make sure categories is defined
-      snippet.categories.forEach(category => categoriesSet.add(category));
+    if (snippet.categories) {
+      snippet.categories.forEach(category => {
+        if (categoriesCount.hasOwnProperty(category)) {
+          categoriesCount[category]++;
+        } else {
+          categoriesCount[category] = 1;
+        }
+      });
     }
   });
-  const sortedCategories = Array.from(categoriesSet).sort(); // Sort the categories
+  
+  const sortedCategories = Object.keys(categoriesCount)
+    .filter(category => categoriesCount[category] >= 3)
+    .sort();
+  
   return sortedCategories;
 }
 
@@ -115,15 +125,25 @@ export function filterByCategory() {
 
   const titles = document.querySelectorAll(".title");
   titles.forEach((title) => {
-    const categories = title.dataset.categories ? title.dataset.categories.split(';') : []; // Add a check to make sure categories is defined
+    const categories = title.dataset.categories ? title.dataset.categories.split(';') : [];
     const matchFound = selectedCategories.every(category => categories.includes(category));
     const snippetCode = title.nextElementSibling;
     title.style.display = matchFound ? "block" : "none";
     snippetCode.style.display = matchFound ? "block" : "none";
   });
-  currentPage = 1; // Reset the current page to 1
+  currentPage = 1;
   updatePaginationButtons(currentPage);
+  window.scrollTo(0, 0);
+
+  const resultsCountElement = document.getElementById("resultsCount");
+  const visibleTitles = document.querySelectorAll(".title:not([style='display: none;'])");
+  const visibleCount = visibleTitles.length;
+  resultsCountElement.textContent = `${visibleCount} results found`;
+
+  applyFilterAndPagination(container, snippetsData, categoryFilterElement, currentPage);
 }
+
+
 
 
 
@@ -134,11 +154,17 @@ export async function createSnippets(container, snippetDataList, categoryFilterE
   snippetDataList.sort((a, b) => a.title.localeCompare(b.title));
 
   const snippetsData = snippetDataList;
-  const uniqueCategories = new Set();
+  const uniqueCategories = getUniqueCategories(snippetDataList);
  
-  snippetDataList.forEach((snippet) => {
-    if (snippet.categories) { // Add a check to make sure categories is defined
-      snippet.categories.forEach((category) => uniqueCategories.add(category));
+  uniqueCategories.forEach((category) => {
+    if (!categoryFilterElement.querySelector(`[value="${category}"]`)) {
+      const categoryCount = snippetsData.filter(snippet => snippet.categories && snippet.categories.includes(category)).length;
+      if (categoryCount >= 3) {
+        const optionElement = document.createElement('option');
+        optionElement.value = category;
+        optionElement.textContent = category;
+        categoryFilterElement.appendChild(optionElement);
+      }
     }
   });
   const sortedCategories = Array.from(uniqueCategories).sort(); // Sort the categories
@@ -155,7 +181,7 @@ export async function createSnippets(container, snippetDataList, categoryFilterE
   container.innerHTML = ""; // Added to clear the container before adding new snippets
 
   // Get the start and end indices of the snippets for the current page
-  const itemsPerPage = 100;
+  const itemsPerPage = 10000;
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 

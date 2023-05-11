@@ -18,19 +18,18 @@ Using the Array.prototype.filter method to filter elements of an array,let numbe
 
 Using the Array.prototype.map method to iterate over an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let doubled = numbers.map((num) => num * 2);%nl%console.log(doubled); // Output: [2&#x2c 4&#x2c 6&#x2c 8&#x2c 10],JavaScript;Arrays;Methods,
 
-Using the Object.values method to get an array of object values,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%let values = Object.values(person);%nl%console.log(values); // Output: ["John"&#x2c "Doe"&#x2c 30],JavaScript;Objects;Methods,
-
-Using the Object.values method to get an array of object values,person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30}; %nl%let values = Object.values(person); %nl%console.log(values); // Output: ["John"&#x2c "Doe"&#x2c 30],JavaScript;Objects;Methods,
-
 Creating a JavaScript object,let person = { %nl% firstName: "John"&#x2c; %nl% lastName: "Doe"&#x2c; %nl% age: 30 %nl%}; %nl%console.log(person);,JavaScript;Objects,
 
 Adding properties to an object,let person = {}; %nl%person.firstName = "John"; %nl%person.lastName = "Doe"; %nl%person.age = 30; %nl%console.log(person);,JavaScript;Objects,
+
 Basic for loop,for (let i = 0&#x2c; i < 10&#x2c; i++) { %nl% console.log(i); %nl%},JavaScript;Loops,
+
 Basic while loop,let i = 0; %nl%while (i < 10) { %nl% console.log(i); %nl% i++; %nl%},JavaScript;Loops,
 
 Array forEach method,const arr = [1&#x2c; 2&#x2c; 3]; %nl%arr.forEach(function (item) { %nl% console.log(item); %nl%});,JavaScript;Arrays;Loops,
 
 Anonymous function,const myFunc = function () { %nl% console.log("This is an anonymous function"); %nl%}; %nl%myFunc();,JavaScript;Functions,
+
 Arrow function,const myFunc = () => { %nl% console.log("This is an arrow function"); %nl%}; %nl%myFunc();,JavaScript;Functions;ES6,
 
 Adding items to an array,const arr = []; %nl%arr.push(1); %nl%arr.push(2); %nl%arr.push(3); %nl%console.log(arr);,JavaScript;Arrays,
@@ -106,6 +105,394 @@ Using the Object.values method to get an array of object values,let person = {fi
 
 Using the Object.entries method to get an array of object key-value pairs,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30}; %nl%let entries = Object.entries(person); %nl%console.log(entries); // Output: [["firstName"&#x2c "John"]&#x2c ["lastName"&#x2c "Doe"]&#x2c ["age"&#x2c 30]],JavaScript;Objects;Methods,
 
+Accessing array values,console.log(MyArray[0]);console.log(MyArray[MyArray.length - 1]);,JavaScript;Arrays,
+
+Adding a value to the end of an array,MyArray.push(100);console.log(MyArray);,JavaScript;Arrays;Methods,
+
+Removing a value from an array,MyArray.splice(0&#x2c 1);console.log(MyArray);,JavaScript;Arrays;Methods,
+
+Using a while loop,let i = 1;while (i < 3) {console.log(i);i++;},JavaScript;Loops,
+
+Using a for loop,for (i = 1; i < 3; i++) {console.log(i);},JavaScript;Loops,
+
+Using a non-standard loop with a random number,let randomNumber = 0;while (randomNumber < 0.01) {randomNumber = Math.random();console.log(randomNumber);},JavaScript;Loops,
+
+Looping through an array,let todoList = ['make dinner'&#x2c 'take shower'&#x2c 'watch movie'];for (let i = 0; i < todoList.length; i++) {const value = todoList[i];console.log(value);},JavaScript;Loops;Arrays,
+
+Summing values of an array,let numbers = [1&#x2c 3&#x2c 5];let total = 0;for (let i = 0; i < numbers.length; i++) {const numbervalue = numbers[i];total = total += numbervalue;console.log(total);},JavaScript;Loops;Arrays,
+
+Doubling the values of an array,const doubleList = [];for (let i = 0; i < numbers.length; i++) {const num = numbers[i];doubleList.push(num * 2);}console.log(doubleList);,JavaScript;Loops;Arrays,
+
+Using the Array.splice method to remove elements from an array,let fruits = ["apple"&#x2c "orange"&#x2c "banana"&#x2c "kiwi"&#x2c "grape"];%nl%fruits.splice(1&#x2c 2);%nl%console.log(fruits); // Output: ["apple"&#x2c "kiwi"&#x2c "grape"],JavaScript;Arrays;Methods,
+
+Using the Array.slice method to create a shallow copy of an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let newNumbers = numbers.slice(1&#x2c 4);%nl%console.log(newNumbers); // Output: [2&#x2c 3&#x2c 4],JavaScript;Arrays;Methods,
+
+Using the Array.concat method to merge arrays,let arr1 = [1&#x2c 2&#x2c 3];%nl%let arr2 = [4&#x2c 5&#x2c 6];%nl%let combinedArray = arr1.concat(arr2);%nl%console.log(combinedArray); // Output: [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5&#x2c 6],JavaScript;Arrays;Methods,
+
+Using the Array.sort method to sort array elements,let unsortedArray = [34&#x2c 12&#x2c 7&#x2c 53&#x2c 9];%nl%unsortedArray.sort();%nl%console.log(unsortedArray); // Output: [7&#x2c 9&#x2c 12&#x2c 34&#x2c 53],JavaScript;Arrays;Methods,
+
+Using the Array.reverse method to reverse the order of array elements,let arrayWithElements = ["a"&#x2c "b"&#x2c "c"&#x2c "d"&#x2c "e"];%nl%arrayWithElements.reverse();%nl%console.log(arrayWithElements); // Output: ["e"&#x2c "d"&#x2c "c"&#x2c "b"&#x2c "a"],JavaScript;Arrays;Methods,
+
+Using the Array.join method to convert an array to a string,let wordsArray = ["apple"&#x2c "banana"&#x2c "cherry"];%nl%let joinedString = wordsArray.join("&#x2c ");%nl%console.log(joinedString); // Output: "apple&#x2c banana&#x2c cherry",JavaScript;Arrays;Methods,
+
+Using the Array.shift method to remove the first element from an array,let animals = ["dog"&#x2c "cat"&#x2c "elephant"&#x2c "giraffe"];%nl%animals.shift();%nl%console.log(animals); // Output: ["cat"&#x2c "elephant"&#x2c "giraffe"],JavaScript;Arrays;Methods,
+
+Using the Array.unshift method to add elements to the beginning of an array,let names = ["Alice"&#x2c "Bob"&#x2c "Charlie"];%nl%names.unshift("David");%nl%console.log(names); // Output: ["David"&#x2c "Alice"&#x2c "Bob"&#x2c "Charlie"],JavaScript;Arrays;Methods,
+
+Using the Array.pop method to remove the last element from an array,let colors = ["red"&#x2c "green"&#x2c "blue"&#x2c "yellow"];%nl%colors.pop();%nl%console.log(colors); // Output: ["red"&#x2c "green"&#x2c "blue"],JavaScript;Arrays;Methods,
+
+Using the Array.push method to add elements to the end of an array,let vehicles = ["car"&#x2c "bike"&#x2c "truck"];%nl%vehicles.push("bus");%nl%console.log(vehicles); // Output: ["car"&#x2c "bike"&#x2c "truck"&#x2c "bus"],JavaScript;Arrays;Methods,
+Using the Array.isArray method to check if a value is an array,let arr = [1&#x2c 2&#x2c 3];%nl%let notArr = "Hello";%nl%console.log(Array.isArray(arr)); // Output: true%nl%console.log(Array.isArray(notArr)); // Output: false,JavaScript;Arrays;Methods,
+
+Using the Array.from method to create an array from an iterable object,let iterable = new Set([1&#x2c 2&#x2c 3]);%nl%let array = Array.from(iterable);%nl%console.log(array); // Output: [1&#x2c 2&#x2c 3],JavaScript;Arrays;Methods,
+
+Using the Array.of method to create an array with specified values,let array = Array.of(1&#x2c 2&#x2c 3);%nl%console.log(array); // Output: [1&#x2c 2&#x2c 3],JavaScript;Arrays;Methods,
+
+Using the Array.fill method to fill array elements with a static value,let array = new Array(3).fill("Hello");%nl%console.log(array); // Output: ["Hello"&#x2c "Hello"&#x2c "Hello"],JavaScript;Arrays;Methods,
+
+Using the Array.some method to check if any element in an array passes a test,let array = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let greaterThanThree = array.some((value) => value > 3);%nl%console.log(greaterThanThree); // Output: true,JavaScript;Arrays;Methods,
+
+Using the Array.filter method to create a new array with elements that pass a test,let array = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let evenNumbers = array.filter((value) => value % 2 === 0);%nl%console.log(evenNumbers); // Output: [2&#x2c 4],JavaScript;Arrays;Methods,
+
+Using the Array.reduceRight method to accumulate a value from an array&#x2c starting from the right,let array = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let sum = array.reduceRight((accumulator&#x2c currentValue) => accumulator + currentValue);%nl%console.log(sum); // Output: 15,JavaScript;Arrays;Methods,
+
+Using the Array.flat method to flatten nested arrays,let nestedArray = [[1&#x2c 2]&#x2c [3&#x2c 4]&#x2c [5&#x2c 6]];%nl%let flattenedArray = nestedArray.flat();%nl%console.log(flattenedArray); // Output: [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5&#x2c 6],JavaScript;Arrays;Methods,
+
+Using the Array.flatMap method to map and flatten an array in a single step,let array = [1&#x2c 2&#x2c 3];%nl%let newArray = array.flatMap((value) => [value&#x2c value * 2]);%nl%console.log(newArray); // Output: [1&#x2c 2&#x2c 2&#x2c 4&#x2c 3&#x2c 6],JavaScript;Arrays;Methods,
+
+Using the Array.every method to check if any element in an array passes a test,let numbers = [2&#x2c 4&#x2c 6&#x2c 8];%nl%let isEven = (number) => number % 2 === 0;%nl%let allEven = numbers.every(isEven);%nl%console.log(allEven); // Output: true,JavaScript;Arrays;Methods,
+
+Using the Object.getOwnPropertyNames method to get an array of all property names of an object,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%let propertyNames = Object.getOwnPropertyNames(person);%nl%console.log(propertyNames); // Output: ["firstName"&#x2c "lastName"&#x2c "age"],JavaScript;Objects;Methods,
+
+Using the Object.getOwnPropertySymbols method to get an array of all symbol property names of an object,let symbol1 = Symbol("symbol1");%nl%let symbol2 = Symbol("symbol2");%nl%let obj = {%nl%[symbol1]: "value1"&#x2c[symbol2]: "value2"%nl%};%nl%let symbolProperties = Object.getOwnPropertySymbols(obj);%nl%console.log(symbolProperties); // Output: [Symbol(symbol1)&#x2c Symbol(symbol2)],JavaScript;Objects;Methods,
+
+Using the Object.freeze method to prevent modifications to an object,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%Object.freeze(person);%nl%person.age = 40; // This will not change the age property%nl%console.log(person.age); // Output: 30,JavaScript;Objects;Methods,
+
+Using the Object.seal method to prevent adding or deleting properties of an object,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%Object.seal(person);%nl%delete person.age; // This will not delete the age property%nl%console.log(person.age); // Output: 30,JavaScript;Objects;Methods,
+
+Using the Object.isFrozen method to check if an object is frozen,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%Object.freeze(person);%nl%let isFrozen = Object.isFrozen(person);%nl%console.log(isFrozen); // Output: true,JavaScript;Objects;Methods,
+
+Using the Object.isSealed method to check if an object is sealed,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%Object.seal(person);%nl%let isSealed = Object.isSealed(person);%nl%console.log(isSealed); // Output: true,JavaScript;Objects;Methods,
+
+Using the Object.assign method to copy the values of all enumerable properties from one or more source objects to a target object,let obj1 = {a: 1&#x2c b: 2};%nl%let obj2 = {b: 3&#x2c c: 4};%nl%let mergedObj = Object.assign({}&#x2c obj1&#x2c obj2);%nl%console.log(mergedObj); // Output: {a: 1&#x2c b: 3&#x2c c: 4},JavaScript;Objects;Methods,
+
+Using the Object.create method to create a new object with a specified prototype and properties,let animal = {type: "mammal"&#x2c speak: function() {console.log("Hello!");}};%nl%let dog = Object.create(animal&#x2c {breed: {value: "Labrador"}});%nl%console.log(dog.breed); // Output: "Labrador",JavaScript;Objects;Methods,
+
+Using the Object.getPrototypeOf method to get the prototype of an object,let animal = {type: "mammal"};%nl%let dog = Object.create(animal);%nl%let prototype = Object.getPrototypeOf(dog);%nl%console.log(prototype); // Output: {type: "mammal"},JavaScript;Objects;Methods,
+
+Using the Object.setPrototypeOf method to set the prototype of an object,let animal = {type: "mammal"};%nl%let dog = {breed: "Labrador"};%nl%Object.setPrototypeOf(dog&#x2c animal);%nl%console.log(dog.type); // Output: "mammal",JavaScript;Objects;Methods,
+
+Using the Object.entries method to iterate over object key-value pairs,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%let entries = Object.entries(person);%nl%for (let [key&#x2c value] of entries) {console.log(${key}: ${value});},JavaScript;Objects;Methods,
+
+Using the Object.fromEntries method to create an object from an array of key-value pairs,let entries = [["firstName"&#x2c "John"]&#x2c ["lastName"&#x2c "Doe"]&#x2c ["age"&#x2c 30]];%nl%let person = Object.fromEntries(entries);%nl%console.log(person); // Output: {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30},JavaScript;Objects;Methods,
+
+Using the JSON.stringify method to convert an object to a JSON string,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30};%nl%let jsonString = JSON.stringify(person);%nl%console.log(jsonString); // Output: '{"firstName":"John"&#x2c"lastName":"Doe"&#x2c"age":30}',JavaScript;Objects;Methods,
+
+Using the JSON.parse method to parse a JSON string and convert it into an object,let jsonString = '{"firstName":"John"&#x2c"lastName":"Doe"&#x2c"age":30}';%nl%let person = JSON.parse(jsonString);%nl%console.log(person); // Output: {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30},JavaScript;Objects;Methods,
+
+Using the ArrayBuffer constructor to create an ArrayBuffer object,let buffer = new ArrayBuffer(8);%nl%console.log(buffer.byteLength); // Output: 8,JavaScript;Objects;Methods,
+
+Using the DataView constructor to create a view of an ArrayBuffer with specified byte offset and length,let buffer = new ArrayBuffer(16);%nl%let view = new DataView(buffer&#x2c 4&#x2c 8);%nl%console.log(view.byteLength); // Output: 8,JavaScript;Objects;Methods,
+
+Using the TypedArray constructors (e.g.&#x2c Int8Array) to create typed arrays with specified length and initial values,let intArray = new Int8Array(3);%nl%intArray[0] = 1;%nl%intArray[1] = 2;%nl%intArray[2] = 3;%nl%console.log(intArray); // Output: Int8Array [1&#x2c 2&#x2c 3],JavaScript;TypedArrays;Constructors,
+
+Using the Date object to format a date as a string,let date = new Date();%nl%let formattedDate = date.toLocaleDateString();%nl%console.log(formattedDate); // Output: "MM/DD/YYYY" (format depends on the system locale),JavaScript;Date;Format,
+
+Using the Date object to compare two dates,let date1 = new Date("2021-01-01");%nl%let date2 = new Date("2021-02-01");%nl%console.log(date1 < date2); // Output: true,JavaScript;Date;Comparison,
+
+Using the Math.max method to find the maximum value in an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let maxNumber = Math.max(...numbers);%nl%console.log(maxNumber); // Output: 5,JavaScript;Math;Max,
+
+Using the Math.min method to find the minimum value in an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let minNumber = Math.min(...numbers);%nl%console.log(minNumber); // Output: 1,JavaScript;Math;Min,
+
+Using the Math.pow method to calculate the power of a number,let base = 2;%nl%let exponent = 3;%nl%let result = Math.pow(base&#x2c exponent);%nl%console.log(result); // Output: 8,JavaScript;Math;Pow,
+
+Using the Math.sqrt method to calculate the square root of a number,let number = 9;%nl%let sqrt = Math.sqrt(number);%nl%console.log(sqrt); // Output: 3,JavaScript;Math;Sqrt,
+
+Using the Math.abs method to get the absolute value of a number,let negativeNumber = -5;%nl%let absoluteValue = Math.abs(negativeNumber);%nl%console.log(absoluteValue); // Output: 5,JavaScript;Math;Abs,
+
+Using the Math.random method to generate a random number between 0 and 1,let randomNumber = Math.random();%nl%console.log(randomNumber); // Output: A random number between 0 and 1,JavaScript;Math;Random,
+
+Using the Math.floor method with Math.random to generate a random integer within a range,let min = 1;%nl%let max = 10;%nl%let randomInteger = Math.floor(Math.random() * (max - min + 1)) + min;%nl%console.log(randomInteger); // Output: A random integer between 1 and 10,JavaScript;Math;RandomInteger,
+
+Using the Math.ceil method with Math.random to generate a random integer within a range,let min = 1;%nl%let max = 10;%nl%let randomInt = Math.ceil(Math.random() * (max - min + 1)) + min;%nl%console.log(randomInt); // Output: a random integer between 1 and 10,JavaScript;Math;Random;Ceil,
+
+Using the Math.round method with Math.random to generate a random integer within a range,let min = 1;%nl%let max = 10;%nl%let randomInt = Math.round(Math.random() * (max - min) + min);%nl%console.log(randomInt); // Output: a random integer between 1 and 10,JavaScript;Math;Random;Round,
+
+Using the Math.trunc method to remove the decimal part of a number,let num = 4.9;%nl%let truncatedNum = Math.trunc(num);%nl%console.log(truncatedNum); // Output: 4,JavaScript;Math;Trunc,
+
+Using the Math.sign method to determine the sign of a number,let num = -5;%nl%let sign = Math.sign(num);%nl%console.log(sign); // Output: -1,JavaScript;Math;Sign,
+
+Using the Math.log method to calculate the natural logarithm of a number,let num = 10;%nl%let naturalLog = Math.log(num);%nl%console.log(naturalLog); // Output: 2.302585092994046,JavaScript;Math;Log,
+
+Using the Math.exp method to calculate the value of Euler's number raised to a power,let power = 3;%nl%let result = Math.exp(power);%nl%console.log(result); // Output: 20.085536923187668,JavaScript;Math;Exp,
+
+Using the Math.sin method to calculate the sine of an angle,let angle = 30;%nl%let radians = (angle * Math.PI) / 180;%nl%let sine = Math.sin(radians);%nl%console.log(sine); // Output: 0.49999999999999994,JavaScript;Math;Sin,
+
+Using the Math.cos method to calculate the cosine of an angle,let angle = 30;%nl%let radians = (angle * Math.PI) / 180;%nl%let cosine = Math.cos(radians);%nl%console.log(cosine); // Output: 0.8660254037844387,JavaScript;Math;Cos,
+
+Using the Math.tan method to calculate the tangent of an angle,let angle = 45;%nl%let radians = (angle * Math.PI) / 180;%nl%let tangent = Math.tan(radians);%nl%console.log(tangent); // Output: 0.9999999999999999,JavaScript;Math;Tan,
+
+Using the Math.PI constant to get the value of π (pi),let piValue = Math.PI;%nl%console.log(piValue); // Output: 3.141592653589793,JavaScript;Math;PI,
+
+Using the Math.E constant to get the value of Euler's number,let eulersNumber = Math.E;%nl%console.log(eulersNumber); // Output: 2.718281828459045,JavaScript;Math;Constants,
+
+Using the String.trim method to remove whitespace from the beginning and end of a string,let str = " hello world ";%nl%let trimmedStr = str.trim();%nl%console.log(trimmedStr); // Output: "hello world",JavaScript;String;Methods,
+
+Using the String.length property to get the length of a string,let str = "hello world";%nl%let strLength = str.length;%nl%console.log(strLength); // Output: 11,JavaScript;String;Properties,
+
+Using the String.charAt method to get the character at a specific index in a string,let str = "hello world";%nl%let charAtIndex = str.charAt(1);%nl%console.log(charAtIndex); // Output: "e",JavaScript;String;Methods,
+
+Using the String.charCodeAt method to get the Unicode value of a character at a specific index in a string,let str = "hello world";%nl%let charCodeAtIndex = str.charCodeAt(1);%nl%console.log(charCodeAtIndex); // Output: 101,JavaScript;String;Methods,
+
+Using the String.split method to split a string into an array of substrings based on a delimiter,let str = "hello world";%nl%let strArray = str.split(" ");%nl%console.log(strArray); // Output: ["hello"&#x2c "world"],JavaScript;String;Methods,
+
+Using the String.replace method to replace a specific substring with another substring in a string,let str = "hello world";%nl%let replacedStr = str.replace("world"&#x2c "JavaScript");%nl%console.log(replacedStr); // Output: "hello JavaScript",JavaScript;String;Methods,
+
+Using the String.includes method to check if a string contains a specific substring,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let word = "fox";%nl%console.log(sentence.includes(word)); // Output: true,JavaScript;String;Methods,
+
+
+
+Using the String.lastIndexOf method to find the last index of a specific substring in a string,let sentence = "The quick brown fox jumps over the lazy dog. I saw a fox.";%nl%let word = "fox";%nl%console.log(sentence.lastIndexOf(word)); // Output: 43,JavaScript;String;Methods,
+
+
+
+Using the String.slice method to extract a portion of a string based on start and end positions,let str = "Hello world!";%nl%console.log(str.slice(6&#x2c 11)); // Output: "world",JavaScript;String;Methods,
+
+Using the String.concat method to concatenate multiple strings into a single string,let str1 = "Hello";%nl%let str2 = "World";%nl%console.log(str1.concat(' '&#x2c str2)); // Output: "Hello World",JavaScript;String;Methods,
+
+Using the String.startsWith method to check if a string starts with a specific substring,let str = "Hello world!";%nl%console.log(str.startsWith("Hello")); // Output: true,JavaScript;String;Methods,
+
+Using the String.endsWith method to check if a string ends with a specific substring,let str = "Hello world!";%nl%console.log(str.endsWith("!")); // Output: true,JavaScript;String;Methods,
+
+Using the String.padStart method to pad a string with a specific character at the beginning,let str = "5";%nl%console.log(str.padStart(2&#x2c "0")); // Output: "05",JavaScript;String;Methods,
+
+Using the String.padEnd method to pad a string with a specific character at the end,let str = "5";%nl%console.log(str.padEnd(2&#x2c "0")); // Output: "50",JavaScript;String;Methods,
+
+Using the String.repeat method to repeat a string a specified number of times,let str = "Hello";%nl%console.log(str.repeat(3)); // Output: "HelloHelloHello",JavaScript;String;Methods,
+
+Using the String.indexOf method to find the index of a specific substring in a string,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let word = "fox";%nl%console.log(sentence.indexOf(word)); // Output: 16,JavaScript;String;Methods,
+
+Using the String.substring method to extract a portion of a string based on start and end indexes,let str = "Hello world!";%nl%console.log(str.substring(0&#x2c 5)); // Output: "Hello",JavaScript;String;Methods,
+
+Using the String.match method to find all occurrences of a pattern in a string,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let pattern = /o/g;%nl%let matches = sentence.match(pattern);%nl%console.log(matches); // Output: ["o"&#x2c "o"&#x2c "o"],JavaScript;Strings;Methods,
+
+Using the String.search method to find the first occurrence of a pattern in a string,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let pattern = /o/;%nl%let firstOccurrence = sentence.search(pattern);%nl%console.log(firstOccurrence); // Output: 10,JavaScript;Strings;Methods,
+
+Using the String.toUpperCase method to convert the first character of each word in a string to uppercase,let sentence = "the quick brown fox jumps over the lazy dog";%nl%let converted = sentence.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');%nl%console.log(converted); // Output: "The Quick Brown Fox Jumps Over The Lazy Dog",JavaScript;Strings;Methods,
+
+Using the String.toLowerCase method to convert the first character of each word in a string to lowercase,let sentence = "The Quick Brown Fox Jumps Over The Lazy Dog";%nl%let converted = sentence.split(' ').map(word => word.charAt(0).toLowerCase() + word.slice(1)).join(' ');%nl%console.log(converted); // Output: "the quick brown fox jumps over the lazy dog",JavaScript;Strings;Methods,
+
+Using the String.charAt method to get the last character in a string,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let lastChar = sentence.charAt(sentence.length - 1);%nl%console.log(lastChar); // Output: "g",JavaScript;Strings;Methods,
+
+Using the String.trimStart method to remove whitespace from the beginning of a string,let sentence = " The quick brown fox jumps over the lazy dog";%nl%let trimmed = sentence.trimStart();%nl%console.log(trimmed); // Output: "The quick brown fox jumps over the lazy dog",JavaScript;Strings;Methods,
+
+Using the String.trimEnd method to remove whitespace from the end of a string,let sentence = "The quick brown fox jumps over the lazy dog ";%nl%let trimmed = sentence.trimEnd();%nl%console.log(trimmed); // Output: "The quick brown fox jumps over the lazy dog",JavaScript;Strings;Methods,
+
+Using the String.endsWith method to check if a string ends with a specific character or substring,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let check = sentence.endsWith("dog");%nl%console.log(check); // Output: true,JavaScript;Strings;Methods,
+
+Using the String.startsWith method to check if a string starts with a specific character or substring,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let check = sentence.startsWith("The");%nl%console.log(check); // Output: true,JavaScript;Strings;Methods,
+
+Using the String.slice method to extract a portion of a string without modifying the original string,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let sliced = sentence.slice(4&#x2c 9);%nl%console.log(sliced); // Output: "quick",JavaScript;Strings;Methods,
+
+Using the String.toUpperCase method to convert a string to uppercase without modifying the original string,let sentence = "The quick brown fox jumps over the lazy dog";%nl%let converted = sentence.toUpperCase();%nl%console.log(converted); // Output: "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG",JavaScript;Strings;Methods,
+
+Using the String.toLowerCase method to convert a string to lowercase without modifying the original string,let text = "Convert ME to Lowercase";%nl%let lowerText = text.toLowerCase();%nl%console.log(lowerText); // Output: "convert me to lowercase",JavaScript;Strings;Methods,
+
+Using the String.padStart method to pad a string with a specific character to a certain length,let str = "5";%nl%let padStr = str.padStart(3&#x2c "0");%nl%console.log(padStr); // Output: "005",JavaScript;Strings;Methods,
+
+Using the String.padEnd method to pad a string with a specific character to a certain length,let str = "5";%nl%let padStr = str.padEnd(3&#x2c "0");%nl%console.log(padStr); // Output: "500",JavaScript;Strings;Methods,
+
+Using the Array.isArray method to check if a value is an array,let arr = [1&#x2c 2&#x2c 3];%nl%let result = Array.isArray(arr);%nl%console.log(result); // Output: true,JavaScript;Arrays;Methods,
+
+Using the Array.from method to create an array from an array-like object,let arrayLike = {0: "a"&#x2c 1: "b"&#x2c 2: "c"&#x2c length: 3};%nl%let newArr = Array.from(arrayLike);%nl%console.log(newArr); // Output: ["a"&#x2c "b"&#x2c "c"],JavaScript;Arrays;Methods,
+
+Using the Array.of method to create an array with the given arguments as elements,let newArr = Array.of(1&#x2c 2&#x2c 3);%nl%console.log(newArr); // Output: [1&#x2c 2&#x2c 3],JavaScript;Arrays;Methods,
+
+Using the Array.reverse method to reverse the order of elements in an array without creating a new array,let arr = [1&#x2c 2&#x2c 3];%nl%arr.reverse();%nl%console.log(arr); // Output: [3&#x2c 2&#x2c 1],JavaScript;Arrays;Methods,
+
+Using the Array.concat method to merge multiple arrays into a single array without modifying the original arrays,let arr1 = [1&#x2c 2&#x2c 3];%nl%let arr2 = [4&#x2c 5&#x2c 6];%nl%let mergedArr = arr1.concat(arr2);%nl%console.log(mergedArr); // Output: [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5&#x2c 6],JavaScript;Arrays;Methods,
+
+Using the Array.join method to concatenate all elements of an array into a single string,let arr = ["Hello"&#x2c "World"];%nl%let joinedStr = arr.join(" ");%nl%console.log(joinedStr); // Output: "Hello World",JavaScript;Arrays;Methods,
+
+Using the Array.shift method to remove the first element from an array and return it,let arr = [1&#x2c 2&#x2c 3];%nl%let removedElement = arr.shift();%nl%console.log(removedElement); // Output: 1,JavaScript;Arrays;Methods,
+
+Using the Array.unshift method to add elements to the beginning of an array and return the new length,let arr = [1&#x2c 2&#x2c 3];%nl%let newLength = arr.unshift(0);%nl%console.log(newLength); // Output: 4,JavaScript;Arrays;Methods,
+
+Using the Array.pop method to remove the last element from an array and return it,let fruits = ["apple"&#x2c "banana"&#x2c "orange"];%nl%let lastFruit = fruits.pop();%nl%console.log(lastFruit); // Output: "orange",JavaScript;Arrays;Methods,
+
+Using the Array.push method to add elements to the end of an array and return the new length,let fruits = ["apple"&#x2c "banana"];%nl%let newLength = fruits.push("orange"&#x2c "grape");%nl%console.log(newLength); // Output: 4,JavaScript;Arrays;Methods,
+
+Using the Array.find method to find the first element in an array that satisfies a condition,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let evenNumber = numbers.find((number) => number % 2 === 0);%nl%console.log(evenNumber); // Output: 2,JavaScript;Arrays;Methods,
+
+Using the Array.findIndex method to find the index of the first element in an array that satisfies a condition,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let evenIndex = numbers.findIndex((number) => number % 2 === 0);%nl%console.log(evenIndex); // Output: 1,JavaScript;Arrays;Methods,
+
+Using the Array.some method to check if at least one element in an array satisfies a condition,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let hasEvenNumber = numbers.some((number) => number % 2 === 0);%nl%console.log(hasEvenNumber); // Output: true,JavaScript;Arrays;Methods,
+
+Using the Array.every method to check if all elements in an array satisfy a condition,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let allEven = numbers.every((number) => number % 2 === 0);%nl%console.log(allEven); // Output: false,JavaScript;Arrays;Methods,
+
+Using the Array.filter method to create a new array with elements that satisfy a condition,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let evenNumbers = numbers.filter((number) => number % 2 === 0);%nl%console.log(evenNumbers); // Output: [2&#x2c 4],JavaScript;Arrays;Methods,
+
+Using the Array.map method to create a new array by applying a function to each element of an existing array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let squaredNumbers = numbers.map((number) => number * number);%nl%console.log(squaredNumbers); // Output: [1&#x2c 4&#x2c 9&#x2c 16&#x2c 25],JavaScript;Arrays;Methods,
+
+Using the Array.reduce method to reduce an array to a single value by applying a function to each element,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let sum = numbers.reduce((accumulator&#x2c number) => accumulator + number&#x2c 0);%nl%console.log(sum); // Output: 15,JavaScript;Arrays;Methods,
+
+Using the Array.forEach method to execute a function for each element of an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%numbers.forEach((number) => console.log(number));%nl%// Output: 1%nl%// 2%nl%// 3%nl%// 4%nl%// 5,JavaScript;Arrays;Methods,
+
+Using the Array.includes method to check if an array includes a specific element,let fruits = ["apple"&#x2c "banana"&#x2c "orange"];%nl%let hasBanana = fruits.includes("banana");%nl%console.log(hasBanana); // Output: true,JavaScript;Arrays;Methods,
+
+Using the Set.add method to add an element to a set,let set = new Set();%nl%set.add("element");%nl%console.log(set); // Output: Set { "element" },JavaScript;Sets;Methods,
+
+Using the Set.has method to check if a set contains a specific element,let set = new Set(["element"]);%nl%let hasElement = set.has("element");%nl%console.log(hasElement); // Output: true,JavaScript;Sets;Methods,
+
+Using the Set.delete method to remove an element from a set,let set = new Set(["element"]);%nl%set.delete("element");%nl%console.log(set); // Output: Set {},JavaScript;Sets;Methods,
+
+Using the Set.size property to get the number of elements in a set,let set = new Set(["element1"&#x2c "element2"&#x2c "element3"]);%nl%let size = set.size;%nl%console.log(size); // Output: 3,JavaScript;Sets;Properties,
+
+Using the Set.clear method to remove all elements from a set,let set = new Set(["element1"&#x2c "element2"&#x2c "element3"]);%nl%set.clear();%nl%console.log(set); // Output: Set {},JavaScript;Sets;Methods,
+
+Using the Map.set method to add a key-value pair to a map,let map = new Map();%nl%map.set("key"&#x2c "value");%nl%console.log(map); // Output: Map { "key" => "value" },JavaScript;Maps;Methods,
+
+Using the Map.get method to retrieve the value associated with a specific key in a map,let map = new Map([["key"&#x2c "value"]]);%nl%let retrievedValue = map.get("key");%nl%console.log(retrievedValue); // Output: value,JavaScript;Maps;Methods,
+
+Using the Map.has method to check if a map contains a specific key,let map = new Map([["key"&#x2c "value"]]);%nl%let hasKey = map.has("key");%nl%console.log(hasKey); // Output: true,JavaScript;Maps;Methods,
+
+Using the Map.delete method to remove a key-value pair from a map,let map = new Map([["key"&#x2c "value"]]);%nl%map.delete("key");%nl%console.log(map); // Output: Map {},JavaScript;Maps;Methods,
+
+Using the Map.size property to get the number of key-value pairs in a map,let map = new Map([["key1"&#x2c "value1"]&#x2c ["key2"&#x2c "value2"]&#x2c ["key3"&#x2c "value3"]]);%nl%let size = map.size;%nl%console.log(size); // Output: 3,JavaScript;Maps;Properties,
+
+Using the Map.clear method to remove all key-value pairs from a map,let map = new Map([["key1"&#x2c "value1"]&#x2c ["key2"&#x2c "value2"]&#x2c ["key3"&#x2c "value3"]]);%nl%map.clear();%nl%console.log(map); // Output: Map {},JavaScript;Maps;Methods,
+
+Using the Array.slice method to extract a subarray from an array,let array = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let subarray = array.slice(1&#x2c 4);%nl%console.log(subarray); // Output: [2&#x2c 3&#x2c 4],JavaScript;Arrays;Methods,
+
+Using the Array.reduce method with an initial value to accumulate a value from an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let sum = numbers.reduce((accumulator&#x2c currentValue) => accumulator + currentValue&#x2c 0);%nl%console.log(sum); // Output: 15,JavaScript;Arrays;Methods,
+
+Using the Array.forEach method with an arrow function to iterate over an array,let fruits = ['apple'&#x2c 'banana'&#x2c 'orange'];%nl%fruits.forEach((fruit) => console.log(fruit));%nl%// Output:%nl%// apple%nl%// banana%nl%// orange,JavaScript;Arrays;Methods,
+
+Using the Array.filter method with an arrow function to create a new array with filtered elements,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let evenNumbers = numbers.filter((number) => number % 2 === 0);%nl%console.log(evenNumbers); // Output: [2&#x2c 4],JavaScript;Arrays;Methods,
+
+Using the Array.map method with an arrow function to create a new array by transforming each element,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let doubledNumbers = numbers.map((number) => number * 2);%nl%console.log(doubledNumbers); // Output: [2&#x2c 4&#x2c 6&#x2c 8&#x2c 10],JavaScript;Arrays;Methods,
+
+Using the Array.sort method with a compare function to sort array elements in a custom order,let fruits = ['apple'&#x2c 'orange'&#x2c 'banana'];%nl%fruits.sort((a&#x2c b) => a.localeCompare(b));%nl%console.log(fruits); // Output: ['apple'&#x2c 'banana'&#x2c 'orange'],JavaScript;Arrays;Methods,
+
+Using the Array.reverse method to reverse the order of elements in an array,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%numbers.reverse();%nl%console.log(numbers); // Output: [5&#x2c 4&#x2c 3&#x2c 2&#x2c 1],JavaScript;Arrays;Methods,
+
+Using the Array.splice method to add or remove elements from an array at a specific index,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%numbers.splice(2&#x2c 0&#x2c 6); // Insert 6 at index 2%nl%console.log(numbers); // Output: [1&#x2c 2&#x2c 6&#x2c 3&#x2c 4&#x2c 5],JavaScript;Arrays;Methods,
+
+Using the Array.concat method to combine multiple arrays into a single array,let arr1 = [1&#x2c 2&#x2c 3];%nl%let arr2 = [4&#x2c 5&#x2c 6];%nl%let combinedArray = arr1.concat(arr2);%nl%console.log(combinedArray); // Output: [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5&#x2c 6],JavaScript;Arrays;Methods,
+
+Using the Array.includes method with a conditional statement to check if an array contains a specific value,let numbers = [1&#x2c 2&#x2c 3&#x2c 4&#x2c 5];%nl%let hasNumberThree = numbers.includes(3);%nl%console.log(hasNumberThree); // Output: true,JavaScript;Arrays;Methods,
+
+Using the String.split method with a delimiter to split a string into an array of substrings,let sentence = 'Hello&#x2c world!';%nl%let words = sentence.split(' ');%nl%console.log(words); // Output: ['Hello&#x2c'&#x2c 'world!'],JavaScript;Strings;Methods,
+
+Using the String.replace method with a regular expression to replace occurrences of a pattern in a string,let sentence = "Hello&#x2c world!";%nl%let newSentence = sentence.replace(/o/g&#x2c "a");%nl%console.log(newSentence); // Output: "Hella&#x2c warld!",JavaScript;Strings;Methods,
+
+Using the String.charAt method with an index to get a specific character from a string,let sentence = "Hello&#x2c world!";%nl%let character = sentence.charAt(7);%nl%console.log(character); // Output: "w",JavaScript;Strings;Methods,
+
+Using the String.indexOf method with a substring to find the first occurrence of a substring in a string,let sentence = "Hello&#x2c world!";%nl%let index = sentence.indexOf("world");%nl%console.log(index); // Output: 7,JavaScript;Strings;Methods,
+
+Using the String.toUpperCase method with string interpolation to convert a string to uppercase,let name = "john doe";%nl%let uppercaseName = ${name.toUpperCase()};%nl%console.log(uppercaseName); // Output: "JOHN DOE",JavaScript;Strings;Methods,
+
+Using the String.toLowerCase method with string interpolation to convert a string to lowercase,let name = "JOHN DOE";%nl%let lowercaseName = ${name.toLowerCase()};%nl%console.log(lowercaseName); // Output: "john doe",JavaScript;Strings;Methods,
+
+Using the Math.random method with Math.floor to generate a random integer within a range,let randomNumber = Math.floor(Math.random() * 10) + 1;%nl%console.log(randomNumber); // Output: Random integer between 1 and 10,JavaScript;Math;Methods,
+
+Using the Math.max method with the spread operator to find the maximum value in an array,let numbers = [4&#x2c 2&#x2c 7&#x2c 1&#x2c 9];%nl%let maxNumber = Math.max(...numbers);%nl%console.log(maxNumber); // Output: 9,JavaScript;Math;Methods,
+
+Using the Math.min method with the spread operator to find the minimum value in an array,let numbers = [4&#x2c 2&#x2c 7&#x2c 1&#x2c 9];%nl%let minNumber = Math.min(...numbers);%nl%console.log(minNumber); // Output: 1,JavaScript;Math;Methods,
+
+Using the Date.now method to get the current timestamp,let timestamp = Date.now();%nl%console.log(timestamp); // Output: <current timestamp>,JavaScript;Date;Methods,
+
+Using the Date.getFullYear method to get the current year,let year = new Date().getFullYear();%nl%console.log(year); // Output: <current year>,JavaScript;Date;Methods,
+
+Using the Date.getMonth method to get the current month,let month = new Date().getMonth();%nl%console.log(month); // Output: <current month>,JavaScript;Date;Methods,
+
+Using the Date.getDate method to get the current day of the month,let day = new Date().getDate();%nl%console.log(day); // Output: <current day of the month>,JavaScript;Date;Methods,
+
+Using the Date.getHours method to get the current hour,let hour = new Date().getHours();%nl%console.log(hour); // Output: <current hour>,JavaScript;Date;Methods,
+
+Using the Date.getMinutes method to get the current minute,let minute = new Date().getMinutes();%nl%console.log(minute); // Output: <current minute>,JavaScript;Date;Methods,
+
+Using the Date.getSeconds method to get the current second,let second = new Date().getSeconds();%nl%console.log(second); // Output: <current second>,JavaScript;Date;Methods,
+
+Using the Date.getMilliseconds method to get the current millisecond,let millisecond = new Date().getMilliseconds();%nl%console.log(millisecond); // Output: <current millisecond>,JavaScript;Date;Methods,
+
+Using the Date.getDay method to get the current day of the week (0-6&#x2c Sunday-Saturday),let dayOfWeek = new Date().getDay();%nl%console.log(dayOfWeek); // Output: <current day of the week (0-6)>,JavaScript;Date;Methods,
+
+Using the Date.getTime method to get the number of milliseconds since January 1&#x2c 1970,let date = new Date();%nl%let milliseconds = date.getTime();%nl%console.log(milliseconds); // Output: 1620739200000,JavaScript;Date;Methods,
+
+Using the Date.toISOString method to convert a date to an ISO 8601 string,let date = new Date();%nl%let isoString = date.toISOString();%nl%console.log(isoString); // Output: "2023-05-11T12:34:56.789Z",JavaScript;Date;Methods,
+
+Using the Date.toLocaleDateString method to format a date as a localized string,let date = new Date();%nl%let localizedDateString = date.toLocaleDateString();%nl%console.log(localizedDateString); // Output: "5/11/2023",JavaScript;Date;Methods,
+
+Using the Date.toLocaleTimeString method to format a time as a localized string,let date = new Date();%nl%let localizedTimeString = date.toLocaleTimeString();%nl%console.log(localizedTimeString); // Output: "12:34:56 PM",JavaScript;Date;Methods,
+
+Using the Date.toUTCString method to convert a date to a UTC string,let date = new Date();%nl%let utcString = date.toUTCString();%nl%console.log(utcString); // Output: "Thu&#x2c 11 May 2023 12:34:56 GMT",JavaScript;Date;Methods,
+
+Using the JSON.stringify method with a replacer function to customize the serialization of an object,let person = { name: "John"&#x2c age: 30 };%nl%let jsonString = JSON.stringify(person&#x2c (key&#x2c value) => {%nl%if (key === "age") {%nl%return value + " years old";%nl%}%nl%return value;%nl%});%nl%console.log(jsonString); // Output: "{"name":"John"&#x2c"age":"30 years old"}",JavaScript;JSON;Methods,
+
+Using the JSON.stringify method with a space argument to add indentation to the serialized JSON string,let person = { name: "John"&#x2c age: 30 };%nl%let jsonString = JSON.stringify(person&#x2c null&#x2c 2);%nl%console.log(jsonString); // Output: "{%nl%"name": "John","age": 30%nl%}",JavaScript;JSON;Methods,
+
+
+
+Using the instanceof operator to check if an object belongs to a specific class or constructor,let obj = new MyClass();%nl%if (obj instanceof MyClass) {%nl%console.log("obj belongs to MyClass");%nl%} else {%nl%console.log("obj does not belong to MyClass");%nl%},JavaScript;Objects;Operators,
+
+Using the isNaN function to check if a value is NaN (Not-a-Number),let num = 10;%nl%if (isNaN(num)) {%nl%console.log("num is NaN");%nl%} else {%nl%console.log("num is not NaN");%nl%},JavaScript;Functions;Validation,
+
+Using the parseFloat function to parse a string and convert it into a floating-point number,let str = "3.14";%nl%let num = parseFloat(str);%nl%console.log(num); // Output: 3.14,JavaScript;Functions;Conversion,
+
+Using the parseInt function to parse a string and convert it into an integer,let str = "42";%nl%let num = parseInt(str);%nl%console.log(num); // Output: 42,JavaScript;Functions;Conversion,
+
+Using the setInterval method to execute a function repeatedly at a fixed interval,function sayHello() {%nl%console.log("Hello!");%nl%}%nl%%nl%let intervalId = setInterval(sayHello&#x2c 1000); // Execute sayHello every 1 second%nl%%nl%// To stop the execution&#x2c use clearInterval(intervalId);,JavaScript;Methods;Timing,
+
+Using the setTimeout method to execute a function after a specified delay,function sayHello() {%nl%console.log("Hello!");%nl%}%nl%%nl%setTimeout(sayHello&#x2c 2000); // Execute sayHello after 2 seconds,JavaScript;Methods;Timing,
+
+Using the clearTimeout function to cancel a delayed function execution,let timeoutId = setTimeout(function() {%nl%console.log("This will not be executed");%nl%}&#x2c 5000);%nl%%nl%clearTimeout(timeoutId); // Cancel the delayed execution,JavaScript;Functions;Timing,
+
+Using the clearInterval function to stop the execution of a function called by setInterval,function sayHello() {%nl%console.log("Hello!");%nl%}%nl%%nl%let intervalId = setInterval(sayHello&#x2c 1000); // Execute sayHello every 1 second%nl%%nl%// To stop the execution&#x2c use clearInterval(intervalId);%nl%clearInterval(intervalId); // Stop the execution,JavaScript;Methods;Timing,
+
+Using the window.location object to get information about the current URL,let url = window.location.href;%nl%console.log(url); // Output: "https://www.example.com",JavaScript;Objects;Browser,
+
+Using the window.open method to open a new browser window or tab,window.open("https://www.example.com"&#x2c "_blank");,JavaScript;Methods;Browser,
+
+Using the window.close method to close the current browser window or tab,let win = window.open(""&#x2c "_self");%nl%win.close();,JavaScript;Window;Methods,
+
+Using the window.alert method to display an alert dialog with a message,window.alert("This is an alert message.");,JavaScript;Window;Methods,
+
+Using the window.prompt method to display a prompt dialog and get user input,let userInput = window.prompt("Please enter your name:");%nl%console.log(userInput);,JavaScript;Window;Methods,
+
+Using the window.confirm method to display a confirmation dialog with a message and get user input,let result = window.confirm("Are you sure you want to delete this item?");%nl%console.log(result);,JavaScript;Window;Methods,
+
+Using the document.getElementById method to get a reference to an HTML element by its ID,let element = document.getElementById("myElement");%nl%console.log(element);,JavaScript;Document;Methods,
+
+Using the document.querySelector method to get a reference to an HTML element using a CSS selector,let element = document.querySelector(".myClass");%nl%console.log(element);,JavaScript;Document;Methods,
+
+Using the document.createElement method to create a new HTML element,let newElement = document.createElement("div");%nl%console.log(newElement);,JavaScript;Document;Methods,
+
+Using the element.appendChild method to append a child element to another element,let parentElement = document.getElementById("parentElement");%nl%let childElement = document.createElement("div");%nl%parentElement.appendChild(childElement);,JavaScript;Element;Methods,
+
+Using the element.removeChild method to remove a child element from its parent,let parentElement = document.getElementById("parentElement");%nl%let childElement = document.getElementById("childElement");%nl%parentElement.removeChild(childElement);,JavaScript;Element;Methods,
+
+Using the element.classList property to add&#x2c remove&#x2c or toggle CSS classes on an element,let element = document.getElementById("myElement");%nl%element.classList.add("newClass");%nl%element.classList.remove("oldClass");%nl%element.classList.toggle("active");,JavaScript; DOM; CSS; Elements,
+
+Using the element.style property to modify the inline CSS styles of an element,let element = document.getElementById("myElement");%nl%element.style.color = "red";%nl%element.style.fontSize = "20px";%nl%element.style.backgroundColor = "blue";,JavaScript; DOM; CSS; Elements,
+
+Using the element.setAttribute method to set an attribute value on an element,let element = document.getElementById("myElement");%nl%element.setAttribute("src"&#x2c "image.jpg");%nl%element.setAttribute("href"&#x2c "https://www.example.com");%nl%element.setAttribute("disabled"&#x2c "true");,JavaScript; DOM; Elements; Attributes,
+
+Using the element.getAttribute method to get the value of an attribute on an element,let element = document.getElementById("myElement");%nl%let src = element.getAttribute("src");%nl%let href = element.getAttribute("href");%nl%let disabled = element.getAttribute("disabled");,JavaScript; DOM; Elements; Attributes,
+
+Using the element.addEventListener method to attach an event listener to an element,let button = document.getElementById("myButton");%nl%button.addEventListener("click"&#x2c function() {%nl%// Event handling code here%nl%});,JavaScript; DOM; Events; Elements,
+
+Using the event.preventDefault method to prevent the default behavior of an event,document.getElementById("myLink").addEventListener("click"&#x2c function(event) {%nl%event.preventDefault();%nl%// Prevents the link from navigating to its href%nl%});,JavaScript; DOM; Events; Event handling,
+
+Using the event.stopPropagation method to stop the propagation of an event to parent elements,document.getElementById("myButton").addEventListener("click"&#x2c function(event) {%nl%event.stopPropagation();%nl%// Prevents the click event from bubbling up to parent elements%nl%});,JavaScript; DOM; Events; Event handling,
+
+Using the XMLHttpRequest object to send an HTTP request and handle the response,let xhr = new XMLHttpRequest();%nl%xhr.open("GET"&#x2c "https://www.example.com/api/data"&#x2c true);%nl%xhr.onreadystatechange = function() {%nl%if (xhr.readyState === 4 && xhr.status === 200) {%nl%let response = JSON.parse(xhr.responseText);%nl%// Handle the response data here%nl%}%nl%};%nl%xhr.send();,JavaScript; XMLHttpRequest; HTTP; Asynchronous; Networking,
+
+Using the fetch API to make an HTTP request and handle the response using Promises,fetch("https://www.example.com/api/data")%nl%.then(response => response.json())%nl%.then(data => {%nl%// Handle the response data here%nl%})%nl%.catch(error => {%nl%// Handle any errors that occurred during the request%nl%});,JavaScript; Fetch API; HTTP; Promises; Networking,
+
+Using the async/await syntax to handle asynchronous operations with Promises,async function getData() {%nl%try {%nl%let response = await fetch("https://www.example.com/api/data");%nl%let data = await response.json();%nl%// Handle the response data here%nl%} catch (error) {%nl%// Handle any errors that occurred during the request%nl%}%nl%}%nl%getData();,JavaScript; Async/await; Promises; Asynchronous; Networking,
+
+Using the try-catch statement to handle exceptions and errors,try {%nl%// Code that may throw an exception or error%nl%} catch (error) {%nl%// Handle the caught exception or error%nl%},JavaScript; Error handling; Exceptions; Try-catch;
 @
-@
+@ 
 @ 

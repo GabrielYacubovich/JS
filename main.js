@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     updatePaginationButtons(currentPage);
     createSnippets(container, snippetsData, categoryFilterElement, currentPage);
     window.scrollTo(0, 0); 
+    
   });
   document.getElementById("previousButton").addEventListener("click", () => {
     currentPage = goToPreviousPage(currentPage);

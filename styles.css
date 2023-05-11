@@ -1,4 +1,4 @@
-body {
+﻿body {
   margin: 0 !important;
 }
 pre {
@@ -52,6 +52,8 @@ p {
   padding-top: 30px;
   margin-bottom: 10px;
   padding-left: 112px;
+  padding-right: 112px;
+
 }
 .copyButton {
   font-size: 14px;
@@ -162,7 +164,7 @@ border-radius: 15px;
   margin-top: 20px;
   padding:5px 9px;
   margin-right:10px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(230, 232, 251);
 }
 .buttons-wrapper {
   position: fixed ;
@@ -178,7 +180,7 @@ border-radius: 15px;
   width: 100%;
   position: fixed ;
   background-color: #ffffff;
-  padding:0px 8px 30px;
+  padding:0px 8px 0px;
 }
 
 .results {
@@ -186,7 +188,7 @@ border-radius: 15px;
   font-size: 13px; 
   color: rgb(103, 103, 103);
   padding-top: 0px !important;
-
+  
 }
 
 @media screen and (max-width: 950px) {
@@ -221,7 +223,7 @@ border-radius: 15px;
     padding-top: 0px !important;
     margin-bottom: 20px;
     padding-left: 100px;
-    
+    padding-right: 100px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -284,6 +286,7 @@ border-radius: 15px;
     font-size: 17px;
     padding-top: 0px !important;    margin-bottom: 20px;
     padding-left: 30px;
+    padding-right: 30px;
   }
   pre {
     margin-left: 20px !important;
@@ -328,11 +331,17 @@ border-radius: 15px;
     margin-bottom: 400px; 
     overflow: hidden;
   }
+  .results {
+    padding-left: 20px;
+  }
 }
 @media screen and (max-width: 340px) {
   #code-container {
     padding-top:0px !important;
     margin-bottom: 400px; 
     overflow: hidden;
+  }
+  .resetButton {
+    display: none;
   }
 }
