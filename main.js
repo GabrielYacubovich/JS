@@ -12,7 +12,7 @@ import {
   updatePaginationButtons,
   openEncoder,
   openConsoleEditor,
-
+  notesButton
 } from './functions.js';
 let currentPage = 1
 
@@ -43,6 +43,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
   document.querySelector("button[onclick='openEncoder()']").addEventListener("click", openEncoder);
   document.querySelector("button[onclick='openConsoleEditor()']").addEventListener("click", openConsoleEditor);
+  
+  
+  
+  document.querySelector("button.notesButton").addEventListener("click", notesButton);
+
+
+  
 
   document.getElementById("nextButton").addEventListener("click", () => {
     currentPage = goToNextPage(currentPage);
