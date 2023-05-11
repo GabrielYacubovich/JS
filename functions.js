@@ -227,11 +227,6 @@ export function updatePaginationButtons(currentPage) {
   nextButton.disabled = currentPage >= maxPages;
 }
 
-export function openEncoder() {
-  // Replace 'URL_TO_YOUR_ENCODER_HTML_FILE' with the URL to your encoder HTML file
-  const encoderUrl = 'https://gabrielyacubovich.github.io/JS/indexEncoder.html';
-  window.open(encoderUrl, '_blank');
-}
 
 export function openEncoder() {
   const encoderUrl = './indexEncoder.html';
