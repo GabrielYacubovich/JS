@@ -1,4 +1,4 @@
-body {
+﻿body {
   margin: 0 !important;
 }
 pre {
@@ -25,6 +25,12 @@ code {
   padding-top:220px;
   margin-bottom: 400px; 
   overflow: hidden;
+}
+
+.rubberDuck {
+max-width:40px;
+margin: 10px 90px 10px 90px;
+float:right
 }
 
 .snippet-code {
@@ -138,42 +144,63 @@ border-radius: 15px;
 .resetButtonBottom {
   border-radius: 15px;
   display: block;
-  padding:6px 19px;
+  padding: 6px 19px;
   margin: 0 auto;
-  
+  background-color: rgb(255, 255, 255);
 }
+
+.resetButtonBottom:hover {
+  background-color: rgb(245, 245, 245); /* Change the color on hover */
+}
+
 .resetButton {
   border-radius: 15px;
   margin-top: 20px;
-  padding:5px 9px;
-  margin-right:10px;
-  background-color: rgb(231, 251, 244);
+  padding: 5px 9px;
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255);
+}
 
+.resetButton:hover {
+  background-color: rgb(245, 245, 245); /* Change the color on hover */
 }
 
 .encodeButton {
   border-radius: 15px;
   margin-top: 20px;
-  padding:5px 9px;
-  margin-right:10px;
+  padding: 5px 9px;
+  margin-right: 10px;
   background-color: rgb(255, 232, 232);
+}
+
+.encodeButton:hover {
+  background-color: rgb(255, 222, 222); /* Change the color on hover */
 }
 
 .consoleEditorButton {
   border-radius: 15px;
   margin-top: 20px;
-  padding:5px 9px;
-  margin-right:10px;
+  padding: 5px 9px;
+  margin-right: 10px;
   background-color: rgb(230, 232, 251);
+}
+
+.consoleEditorButton:hover {
+  background-color: rgb(220, 222, 241); /* Change the color on hover */
 }
 
 .notesButton {
   border-radius: 15px;
   margin-top: 20px;
-  padding:5px 9px;
-  margin-right:10px;
-  background-color: rgb(253, 252, 217);
+  padding: 5px 9px;
+  margin-right: 10px;
+  background-color: rgb(249, 249, 162);
 }
+
+.notesButton:hover {
+  background-color: rgb(239, 239, 132); /* Change the color on hover */
+}
+
 .buttons-wrapper {
   position: fixed ;
   bottom: 0;
@@ -264,6 +291,11 @@ border-radius: 15px;
   #categoryFilter {
     display: none;
   }
+  .rubberDuck {
+    max-width:35px;
+    margin: 20px 30px 10px 40px;
+    float:right
+    }
   .searchbar {
     padding-left: 20px;
     margin-right: 20px;
