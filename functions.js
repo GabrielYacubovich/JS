@@ -237,4 +237,7 @@ export function openConsoleEditor() {
   const consoleEditorUrl = './indexEditor.html';
   window.open(consoleEditorUrl, '_blank');
 }
-
+export function notesButton() {
+  const notesUrl = './indexNotes.html';
+  window.open(notesUrl, '_blank');
+}
