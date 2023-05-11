@@ -51,10 +51,16 @@
 <pre id="console"></pre>
 <script>
  const editorElement = document.getElementById('editor');
-const editor = CodeMirror(editorElement, {
+ const editor = CodeMirror(editorElement, {
   mode: 'javascript',
   lineNumbers: true,
-  theme: 'default'});
+  theme: 'default',
+  extraKeys: {
+    "Tab": function(cm) {
+      runButton.focus();
+    }
+  }
+});
   const runButton = document.getElementById('runButton');
   const consoleElement = document.getElementById('console');
 
