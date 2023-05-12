@@ -79,16 +79,12 @@
   };
 
   runButton.addEventListener('click', () => {
-    clearConsole();
-    try {
       const code = editor.getValue();
       const script = document.createElement('script');
       script.textContent = code;
       document.body.appendChild(script);
       document.body.removeChild(script);
-    } catch (error) {
-      console.log('Error: ' + error);
-    }
+
   });
 </script>
 </body>
