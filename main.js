@@ -1,63 +1,33 @@
 // main.js
 import {
-  copyText,
   search,
   resetSearch,
   createSnippets,
-  fetchCSVData,
   getUniqueCategories,
   filterByCategory,
-  goToPreviousPage,
-  goToNextPage,
-  updatePaginationButtons,
-  openEncoder,
-  openConsoleEditor,
-  notesButton
-} from './functions.js';
-let currentPage = 1
 
+  
+} from './functions.js';
+import { openEncoder, openConsoleEditor, notesButton,copyText,fetchCSVData } from './extraFeatures.js';
 
 const container = document.querySelector('#code-container');
-
 // Register event listeners and initialize the page
+
 document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("searchInput").addEventListener("click", search);
   document.getElementById("resetButton").addEventListener("click", () => {
     resetSearch();
-    currentPage = 1;
-    updatePaginationButtons(currentPage);
-    createSnippets(container, snippetsData, categoryFilterElement, currentPage);
+    createSnippets(container, snippetsData, categoryFilterElement);
+    window.scrollTo(0, 0); 
   });
   document.getElementById("resetButtonBottom").addEventListener("click", () => {
     resetSearch();
-    currentPage = 1;
-    updatePaginationButtons(currentPage);
-    createSnippets(container, snippetsData, categoryFilterElement, currentPage);
+    createSnippets(container, snippetsData, categoryFilterElement);
     window.scrollTo(0, 0); 
-    
-  });
-  document.getElementById("previousButton").addEventListener("click", () => {
-    currentPage = goToPreviousPage(currentPage);
-    updatePaginationButtons(currentPage);
-    createSnippets(container, snippetsData, categoryFilterElement, currentPage);
   });
   document.querySelector("button[onclick='openEncoder()']").addEventListener("click", openEncoder);
   document.querySelector("button[onclick='openConsoleEditor()']").addEventListener("click", openConsoleEditor);
-  
-  
-  
   document.querySelector("button.notesButton").addEventListener("click", notesButton);
-
-
-  
-
-  document.getElementById("nextButton").addEventListener("click", () => {
-    currentPage = goToNextPage(currentPage);
-    updatePaginationButtons(currentPage);
-    createSnippets(container, snippetsData, categoryFilterElement, currentPage);
-  });
-
-  updatePaginationButtons();
   const categoryFilterElement = document.querySelector('#categoryFilter');
   const snippetsData = await fetchCSVData('snippets.csv');
   const uniqueCategories = getUniqueCategories(snippetsData);
@@ -69,12 +39,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       categoryFilterElement.appendChild(option);
     }
   });
-
   // Register filter event listener
   categoryFilterElement.addEventListener("change", filterByCategory);
-
   // Pass snippetsData to createSnippets() function
-  await createSnippets(container, snippetsData, categoryFilterElement, currentPage);
-
+  await createSnippets(container, snippetsData, categoryFilterElement);
 });
-
