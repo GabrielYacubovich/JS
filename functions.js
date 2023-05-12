@@ -59,7 +59,7 @@ export function getUniqueCategories(snippetsData) {
   return sortedCategories;
 }
 
-export function filterByCategory(container,categoryFilterElement, ) {
+export function filterByCategory() {
   const selectedCategories = Array.from(
     document.getElementById("categoryFilter").selectedOptions
   ).map(option => option.value);
@@ -93,7 +93,7 @@ export async function createSnippets(container, snippetDataList, categoryFilterE
       }
     }
   });
-  const sortedCategories = Array.from(uniqueCategories).sort(); 
+
   uniqueCategories.forEach((category) => {
     if (!categoryFilterElement.querySelector(`[value="${category}"]`)) {
       const optionElement = document.createElement('option');
@@ -107,7 +107,7 @@ export async function createSnippets(container, snippetDataList, categoryFilterE
   const visibleSnippets = snippetsData.slice();
   visibleSnippets.forEach((snippet) => {
     const snippetDiv = document.createElement('div');
-    const categories = snippet.categories ? snippet.categories.join(';') : ''; // Add a check to make sure categories is defined
+   
     snippetDiv.innerHTML = `
       <div>
         <h3 class="title" data-categories="${snippet.categories.join(';')}">${snippet.title}</h3>
