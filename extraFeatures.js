@@ -1,3 +1,6 @@
+
+
+
 //Copy button
 export function copyText(event) {
   const copyButton = event.target;
@@ -25,13 +28,25 @@ export function notesButton() {
 
 // Fetch data from CSV
 export async function fetchCSVData(file) {
-  const response = await fetch(file);
-  const data = await response.text();
-  const parsedData = data.split('\n').slice(1) 
-  .filter(row => !row.startsWith('@') && row.trim() !== ''); 
-  const snippetsData = parsedData.map((row) => {
-    const [title, code, categories] = row.split(',');
-    return { title, code: code.replace(/%nl%/g, '\n'), categories: categories.split(';') };
-  });
-  return snippetsData;
+  try {
+    const response = await fetch(file);
+    if (!response.ok) {
+      throw new Error("Failed to fetch CSV data");
+    }
+    const data = await response.text();
+    const parsedData = data.split('\n').slice(1)
+      .filter(row => !row.startsWith('@') && row.trim() !== '');
+    const snippetsData = parsedData.map((row) => {
+      const [title, code, categories] = row.split(',');
+      return { title, code: code.replace(/%nl%/g, '\n'), categories: categories.split(';') };
+    });
+    return snippetsData;
+  } catch (error) {
+    console.error(error);
+    // Handle the error (e.g., show an error message to the user)
+    return []; // Return an empty array or a default value if desired
+  }
 }
+
+
+ 

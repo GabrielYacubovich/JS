@@ -2,6 +2,7 @@ title,code,categories
 @ %nl% does as <br> @ opening line comments  &#x2c is comma
 @
 @ if a category appears duplicate, check the extra spaces
+
 Using template literals to concatenate strings and variables,let firstName = "John";%nl%let lastName = "Doe";%nl%let fullName = `${firstName} ${lastName}`;%nl%console.log(fullName); // Output: "John Doe",JavaScript;Strings;Template Literals,
 
 Using the Array.every method to check if all elements in an array pass a test,let numbers = [10&#x2c 20&#x2c 30&#x2c 40&#x2c 50];%nl%let allGreaterThan5 = numbers.every((num) => num > 5);%nl%console.log(allGreaterThan5); // Output: true,JavaScript;Arrays;Methods,

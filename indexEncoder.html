@@ -25,10 +25,10 @@
     <h1>Format Converter</h1>
     <p>Syntax example:<br>
     Using the Object.values method to get an array of object values,<br>
-let person = {firstName: "John", lastName: "Doe", age: 30}; <br>
-let values = Object.values(person); <br>
-console.log(values); // Output: ["John", "Doe", 30],<br>
-JavaScript;Objects;Methods,<br></p>
+    let person = {firstName: "John", lastName: "Doe", age: 30};<br>
+    let values = Object.values(person);<br>
+    console.log(values); // Output: ["John", "Doe", 30],<br>
+    JavaScript;Objects;Methods,<br></p>
     <label for="inputFormatA">Input (FORMAT A):</label>
     <textarea id="inputFormatA"></textarea>
     <button onclick="convert()">Convert</button>
@@ -36,8 +36,13 @@ JavaScript;Objects;Methods,<br></p>
     <textarea id="outputFormatB" readonly></textarea>
     <label for="notepad">Notepad:</label>
     <textarea id="notepad"></textarea>
+    <label for="csvContent">CSV Content:</label>
+    <textarea id="csvContent"></textarea>
+    <button onclick="addToCSV()">Add to CSV</button>
 
     <script>
+        let csvContent = ""; // Store the CSV content
+
         function encodeFormatAtoB(input) {
             const endsWithComma = input.endsWith(",");
             const normalizedInput = input.replace(/(\r\n|\n|\r)/g, '%nl%');
@@ -47,16 +52,38 @@ JavaScript;Objects;Methods,<br></p>
         }
 
         function convert() {
-    const inputFormatA = document.getElementById("inputFormatA");
-    const outputFormatB = document.getElementById("outputFormatB");
+            const inputFormatA = document.getElementById("inputFormatA");
+            const outputFormatB = document.getElementById("outputFormatB");
 
-    const encodedText = encodeFormatAtoB(inputFormatA.value);
-    outputFormatB.value = encodedText;
+            const encodedText = encodeFormatAtoB(inputFormatA.value);
+            outputFormatB.value = encodedText;
 
-    const notepad = document.getElementById("notepad");
-    notepad.value += encodedText + '\n';
-}
+            const notepad = document.getElementById("notepad");
+            notepad.value += encodedText + '\n';
 
+            // Update the CSV content
+            csvContent += encodedText;
+        }
+
+        function addToCSV() {
+            const csvContentInput = document.getElementById("csvContent");
+            const content = csvContentInput.value.trim();
+
+            if (content.length > 0) {
+                csvContent += content + '\n';
+                csvContentInput.value = "";
+
+                // Save the CSV content to snippets.csv
+                const csvData = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent);
+                const link = document.createElement('a');
+                link.setAttribute('href', csvData);
+                link.setAttribute('download', 'snippets.csv');
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
     </script>
 </body>
-</html>
+</html

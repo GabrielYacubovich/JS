@@ -1,36 +1,43 @@
 // functions.js
-import {copyText } from './extraFeatures.js';
+copyText
 
+import {copyText } from './extraFeatures.js';
 const searchInput = document.getElementById("searchInput");
 searchInput.addEventListener("keyup", search);
 searchInput.setAttribute("autocomplete", "off");
 
+let searchTimeout;
+
 export function search() {
-  const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-  const titles = document.querySelectorAll(".title");
-  let resultsCount = 0;
-  titles.forEach((title) => {
-    const titleText = title.textContent.toLowerCase();
-    const snippetCode = title.nextElementSibling;
-    const codeText = snippetCode.querySelector("code").textContent.toLowerCase();
-    const matchFound = titleText.includes(searchTerm) || codeText.includes(searchTerm);
-    if (matchFound) {
-      title.style.display = "";
-      snippetCode.style.display = "";
-      resultsCount++;
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const titles = document.querySelectorAll(".title");
+    let resultsCount = 0;
+    titles.forEach((title) => {
+      const titleText = title.textContent.toLowerCase();
+      const snippetCode = title.nextElementSibling;
+      const codeText = snippetCode.querySelector("code").textContent.toLowerCase();
+      const matchFound = titleText.includes(searchTerm) || codeText.includes(searchTerm);
+      if (matchFound) {
+        title.style.display = "";
+        snippetCode.style.display = "";
+        resultsCount++;
+      } else {
+        title.style.display = "none";
+        snippetCode.style.display = "none";
+      }
+    });
+    // Display the results count if search term is not empty, otherwise reset the results count
+    const resultsCountElement = document.getElementById("resultsCount");
+    if (searchTerm) {
+      resultsCountElement.textContent = `${resultsCount} results found`;
     } else {
-      title.style.display = "none";
-      snippetCode.style.display = "none";
+      resultsCountElement.textContent = "";
     }
-  });
-  // Display the results count if search term is not empty, otherwise reset the results count
-  const resultsCountElement = document.getElementById("resultsCount");
-  if (searchTerm) {
-    resultsCountElement.textContent = `${resultsCount} results found`;
-  } else {
-    resultsCountElement.textContent = "";
-  }
+  }, 200); // Debounce time in milliseconds
 }
+
 
 export function resetSearch() {
   document.getElementById("searchInput").value = "";
@@ -38,8 +45,6 @@ export function resetSearch() {
   const resultsCountElement = document.getElementById("resultsCount");
   resultsCountElement.textContent = ""; // Clear the results count
 }
-
-
 
 export function getUniqueCategories(snippetsData) {
   const categoriesCount = {};
@@ -77,7 +82,7 @@ export function filterByCategory() {
   const visibleTitles = document.querySelectorAll(".title:not([style='display: none;'])");
   const visibleCount = visibleTitles.length;
   resultsCountElement.textContent = `${visibleCount} results found`;
-  
+
 }
 export async function createSnippets(container, snippetDataList, categoryFilterElement) {
   snippetDataList.sort((a, b) => a.title.localeCompare(b.title));
@@ -108,7 +113,7 @@ export async function createSnippets(container, snippetDataList, categoryFilterE
   const visibleSnippets = snippetsData.slice();
   visibleSnippets.forEach((snippet) => {
     const snippetDiv = document.createElement('div');
-   
+
     snippetDiv.innerHTML = `
       <div>
         <h3 class="title" data-categories="${snippet.categories.join(';')}">${snippet.title}</h3>
