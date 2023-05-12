@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html>
-<title>Learning JS V15
+<title>Learning JS V14
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
-   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div class="title-wrapper">
-  <p class="main-title">Learning JS</p>
-  <div class="dividerMobile"></div>
-  <div class="dividerMobile1"></div>
-  <div class="dividerMobile2"></div>
-  <div class="divider"></div>
-  <div class="divider2"></div>
-  <div class="divider3"></div>
-  <div class="searchbar">
-    <input class="searchInput" type="text" id="searchInput" placeholder="Search...">
+    <p class="main-title">Learning JS</p>
+    <div class="dividerMobile"></div>
+    <div class="dividerMobile1"></div>
+    <div class="dividerMobile2"></div>
+    <div class="divider"></div>
+    <div class="divider2"></div>
+    <div class="divider3"></div>
+    <div class="searchbar">
+      <input class="searchInput" type="text" id="searchInput" placeholder="Search...">
 
-    <button class="resetButton" id="resetButton">Reset</button>
-    <button class="encodeButton" onclick="openEncoder()">Open Encoder</button>
-    <button class="consoleEditorButton" onclick="openConsoleEditor()">Console</button>
-    <button class="notesButton" onclick="notesButton()">Notes</button>
-    <select id="categoryFilter" multiple>
-      <!-- Categories will be populated dynamically -->
-    </select>
+      <button class="resetButton" id="resetButton">Reset</button>
+      <button class="encodeButton" onclick="openEncoder()">Open Encoder</button>
+      <button class="consoleEditorButton" onclick="openConsoleEditor()">Console</button>
+      <button class="notesButton" onclick="notesButton()">Notes</button>
+      <select id="categoryFilter" multiple>
+        <!-- Categories will be populated dynamically -->
+      </select>
+    </div>
+
+    <!-- Can use this div to add content between the features and the code results -->
+    <div style="margin-left: 104px; margin-top: 12px; margin-right: 100px;font-size: 13px;"></div>
+    <div>
+      <p class="results" id="resultsCount"></p>
+    </div>
   </div>
-
-  <!-- Can use this div to add content between the features and the code results -->
-  <div style="margin-left: 104px; margin-top: 12px; margin-right: 100px;font-size: 13px;"></div>
-<div>
-  <p class="results" id="resultsCount"></p>
-</div>
-</div>
- 
-  
-
   <div id="code-container"></div>
-  
-  <div class="buttons-wrapper">
-  
-    <div class="divider4"></div>
-    <button id="resetButtonBottom" class="resetButtonBottom">Reset search &#8634;</button>  
-    <img class="rubberDuck" src="rubberDuck.jpeg" onclick="window.open('https://www.youtube.com/watch?v=_uuMpVf2R8E&ab_channel=ScienceChannel', '_blank')" alt="Random Video">
 
+  <div class="buttons-wrapper">
+    <div class="divider4"></div>
+    <button id="resetButtonBottom" class="resetButtonBottom">Reset search &#8634;</button>
+    <img class="rubberDuck" src="rubberDuck.jpeg"
+      onclick="window.open('https://www.youtube.com/watch?v=_uuMpVf2R8E&ab_channel=ScienceChannel', '_blank')"
+      alt="Random Video">
+      <button id="generatePDFButton">Generate PDF</button>
 
   </div>
-
+  <script>
+    // Attach the jsPDF instance to the window object
+    window.jsPDF = window.jspdf.jsPDF;
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.min.js"></script>
   <script type="module" src="./main.js"></script>
 </body>
 
 </html>
+
