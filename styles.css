@@ -1,4 +1,4 @@
-body {
+﻿body {
   margin: 0 !important;
 }
 pre {
@@ -125,12 +125,25 @@ border-radius: 15px;
   border-radius: 15px;
   display: block;
   padding: 6px 19px;
-  margin: 0 auto;
-  background-color: rgb(255, 255, 255);
+  float:left;
+  border: 1px black solid;
+  background-color: rgb(242, 242, 242);
+}
+
+.pdfButton {
+  border-radius: 15px;
+  display: block;
+  padding: 6px 19px;
+  float:right;
+  background-color: rgb(242, 242, 242);
+  border: 1px black solid;
 }
 
 .resetButtonBottom:hover {
-  background-color: rgb(245, 245, 245); /* Change the color on hover */
+  background-color: rgb(255, 255, 255); 
+}
+.pdfButton:hover {
+  background-color: rgb(255, 255, 255); 
 }
 
 .resetButton {
@@ -138,11 +151,13 @@ border-radius: 15px;
   margin-top: 20px;
   padding: 5px 9px;
   margin-right: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(242, 242, 242);
+  border: 1px black solid;
 }
 
 .resetButton:hover {
-  background-color: rgb(245, 245, 245); /* Change the color on hover */
+  background-color: rgb(255, 255, 255); 
+
 }
 
 .encodeButton {
@@ -150,11 +165,15 @@ border-radius: 15px;
   margin-top: 20px;
   padding: 5px 9px;
   margin-right: 10px;
-  background-color: rgb(255, 232, 232);
+  background-color: rgb(42, 42, 42);
+  color: white;
+  border: solid black 1px;
 }
 
 .encodeButton:hover {
-  background-color: rgb(255, 222, 222); /* Change the color on hover */
+  background-color: rgb(234, 234, 234);
+  color: black;
+
 }
 
 .consoleEditorButton {
@@ -162,11 +181,15 @@ border-radius: 15px;
   margin-top: 20px;
   padding: 5px 9px;
   margin-right: 10px;
-  background-color: rgb(230, 232, 251);
+  background-color: rgb(49, 50, 54);
+  border: solid 1px rgb(49, 50, 54) ;
+  color: white;
 }
 
 .consoleEditorButton:hover {
-  background-color: rgb(220, 222, 241); /* Change the color on hover */
+  background-color: rgb(234, 234, 234);
+  color: black;
+
 }
 
 .notesButton {
@@ -175,10 +198,12 @@ border-radius: 15px;
   padding: 5px 9px;
   margin-right: 10px;
   background-color: rgb(249, 249, 162);
+  border: 2px rgb(31, 31, 31) solid;
 }
 
 .notesButton:hover {
-  background-color: rgb(239, 239, 132); /* Change the color on hover */
+  background-color: rgb(239, 239, 132); 
+  color: black;
 }
 
 .buttons-wrapper {
@@ -341,18 +366,33 @@ width: 18%;  }
   .searchInput{
     font-size: 14px;
   }
+  .pdfButton {
+    display: none;
+  }
+  .buttonsBottomDiv {
+    width: 100% !important;
+    margin-left: 20px;
+  
+
+  }
+  .resetButtonBottom{
+  float:left;
+  font-size: 12px !important;
+  
+  }
+  
   .buttons-wrapper{
     padding: 20px 10px;
   }
-  .title-wrapper {
-    padding: 0px 8px 10px;
-  }
+
   .consoleEditorButton,
   .encodeButton {
     display: none;
   }
   .title-wrapper{
     position: relative  ;
+    padding: 0px 8px 10px;
+
 
   }
   #code-container {

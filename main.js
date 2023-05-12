@@ -77,33 +77,40 @@ function generatePDF() {
   const pdf = new jsPDF();
   const codeContainer = document.getElementById("code-container");
   const snippets = codeContainer.querySelectorAll(".title, .snippet-code");
-  
-  let y = 10; // Start at position 10
-  const lineHeight = 7; // Line height
-  
-  snippets.forEach((snippet) => {
-    // Adjust font size and style based on whether the snippet is a title or code
-    if (snippet.classList.contains("title")) {
-      pdf.setFontSize(14); // Set the font size to 14 points for titles
-      pdf.setFont('helvetica', 'bold'); // Set the font weight to bold for titles
-    } else {
-      pdf.setFontSize(12); // Set the font size to 12 points for code
-      pdf.setFont('helvetica', 'normal'); // Set the font weight to normal for code
-    }
 
-    let lines = pdf.splitTextToSize(snippet.textContent, 180); // Split the text into lines
-    for(let i = 0; i < lines.length; i++) {
-      if (y > 280) {  // approximately check if we have crossed page limit
-        pdf.addPage();  // add new page
-        y = 20;  // reset y for new page
+  let y = 10; // Start at position 10
+  const lineHeight = 7 ; // Line height (convert from points to mm)
+
+  snippets.forEach((snippet) => {
+    // Check if the snippet is visible
+    if (snippet.offsetParent !== null) {
+      // Adjust font size and style based on whether the snippet is a title or code
+      if (snippet.classList.contains("title")) {
+        pdf.setFontSize(14); // Set the font size to 14 points for titles
+        pdf.setFont('helvetica', 'bold'); // Set the font weight to bold for titles
+      } else {
+        pdf.setFontSize(12); // Set the font size to 12 points for code
+        pdf.setFont('helvetica', 'normal'); // Set the font weight to normal for code
       }
-      pdf.text(lines[i], 10, y);
-      y += lineHeight;
+
+      const lines = pdf.splitTextToSize(snippet.textContent, 180); // Split the text into lines
+      lines.forEach((line) => {
+        // Check if we need to add a new page
+        if (y + lineHeight > 297 - 10) { // 297 is the height of an A4 page, 10 is a margin
+          pdf.addPage();
+          y = 10; // Reset y to the top of the new page
+        }
+        pdf.text(line, 10, y);
+        y += lineHeight;
+      });
+      y += lineHeight; // Add an extra line height as a gap between snippets
     }
-    y += lineHeight; // Add an extra line height as a gap between snippets
   });
-  
+
   pdf.save("results.pdf");
 }
+
+
+
 
 
