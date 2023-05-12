@@ -1,4 +1,5 @@
 // functions.js
+import {copyText } from './extraFeatures.js';
 
 const searchInput = document.getElementById("searchInput");
 searchInput.addEventListener("keyup", search);
