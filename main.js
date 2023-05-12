@@ -52,23 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Pass snippetsData to createSnippets() function
   await createSnippets(container, snippetsData, categoryFilterElement);
 
-  // Function to load more snippets on scroll
-  const loadMoreSnippets = async () => {
-    await createSnippets(container, snippetsData, categoryFilterElement);
-  };
-
-  // Add scroll event listener to trigger lazy loading
-  window.addEventListener('scroll', () => {
-    const {
-      scrollTop,
-      scrollHeight,
-      clientHeight
-    } = document.documentElement;
-
-    if (scrollTop + clientHeight >= scrollHeight - 5) {
-      loadMoreSnippets();
-    }
-  });
+ 
 
 });
 
