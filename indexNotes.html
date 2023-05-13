@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="icon" href="notes.ico" type="image/x-icon">
   <meta charset="UTF-8">
@@ -8,18 +9,24 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      background-color: #fff;
       margin: 0;
       padding: 0;
     }
-
+    h1 {
+      margin-left: 20px;
+    }
+    h2 {
+      margin:10px 0px;
+      margin-left: 20px;
+    }
     .container {
-      max-width: 800px;
-      margin: 20px auto;
+      max-width: 100%;
+      margin: 0px auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      
     }
 
     .input-section input,
@@ -33,13 +40,27 @@
     }
 
     .input-section button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4caf50;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      border-radius: 15px;
+      margin-top: 5px;
+      margin-bottom: 25px;
+      padding: 5px 9px;
+      margin-right: 10px;
+      background-color: rgb(49, 50, 54);
+      border: solid 1px rgb(49, 50, 54);
+      color: white;
+      background-image: linear-gradient(to right, #780206 0%, #061161 51%, #780206 100%);
+      text-align: center;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;
+      margin-left: 20px;
+    }
+
+    .input-section button:hover {
+      background-color: rgb(234, 234, 234);
+      color: white;
+      background-position: right center;
+      /* change the direction of the change here */
     }
 
     .notes-section select {
@@ -48,13 +69,16 @@
       font-size: 16px;
       margin-bottom: 10px;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      margin-left: 20px;
+      border: 1px solid gray;
     }
 
     .notes-section #displayNote {
       background-color: #f0f0f0;
       padding: 10px;
       border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid gray;
     }
 
     #displayNote {
@@ -71,28 +95,63 @@
       white-space: pre-wrap;
       font-family: monospace;
     }
+    .removeAllBtn,
+    .removeBtn {
+      border-radius: 15px;
+      margin-top: 5px;
+      margin-bottom: 25px;
+      padding: 5px 9px;
+      margin-right: 10px;
+      background-color: rgb(49, 50, 54);
+      border: solid 1px rgb(49, 50, 54);
+      color: white;
+      background-image: linear-gradient(to right, #780206 0%, #061161 51%, #780206 100%);
+      text-align: center;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;
+      margin-left: 20px;
+    }
+    .removeBtn {
+      background-image: linear-gradient(to right, #c3040b 0%, #0218c5 51%, #b70b11 100%);
+    }
+    .textBox {
+  display: block;
+  margin: 0 auto;
+  max-width: calc(100% - 40px); /* 100% width - container padding */
+  box-sizing: border-box; /* To include padding and border in the element's total width */
+  resize: vertical; /* Allows only vertical resizing */
+}
+#displayNote {
+  margin: 0 auto;
+  max-width: calc(100% - 40px);
+  box-sizing: border-box;
+}
   </style>
 </head>
-<body>
+
+<body >
   <div class="container">
-    <h1>Note Taking App</h1>
+    <h1>Notes</h1>
     <div class="input-section">
-      <input type="text" id="noteTitle" placeholder="Title">
-      <textarea id="noteContent" placeholder="Write your note here"></textarea>
+      <input class="textBox" type="text" id="noteTitle" placeholder="Title">
+      <textarea class="textBox" id="noteContent" placeholder="Write your note here"></textarea>
       <button id="saveBtn">Save Note</button>
     </div>
     <div class="notes-section">
       <h2>Saved Notes</h2>
       <select id="noteList"></select>
       <div id="displayNote">
-        <h3>Title: <span id="displayTitle"></span></h3>
+        <h3><span id="displayTitle"></span></h3>
         <pre id="displayContent"></pre>
-        <button id="removeBtn">Remove Note</button><button id="removeAllBtn">Remove All</button>
-
-        
+       </div>
+      <div>
+        <button class="removeBtn" id="removeBtn">Remove Note</button><button class="removeAllBtn"  id="removeAllBtn">Remove All</button>
       </div>
     </div>
   </div>
+
+
   <script>
     // Retrieve the saved notes from local storage
     function getSavedNotes() {
@@ -140,11 +199,11 @@
         displayNotes();
       }
     }
-// Remove all notes
-function removeAllNotes() {
-  localStorage.removeItem('notes');
-  displayNotes();
-}
+    // Remove all notes
+    function removeAllNotes() {
+      localStorage.removeItem('notes');
+      displayNotes();
+    }
 
     // Display the notes in the select dropdown
     function displayNotes() {
@@ -152,7 +211,7 @@ function removeAllNotes() {
       noteList.innerHTML = '';
 
       let notes = getSavedNotes();
-      notes.forEach(function(note, index) {
+      notes.forEach(function (note, index) {
         let option = document.createElement('option');
         option.value = index;
         option.text = note.title;
@@ -162,22 +221,22 @@ function removeAllNotes() {
       noteList.selectedIndex = -1;
       displaySelectedNote();
     }
-// Display the selected note
-function displaySelectedNote() {
-  let noteList = document.getElementById('noteList');
-  let displayTitle = document.getElementById('displayTitle');
-  let displayContent = document.getElementById('displayContent');
+    // Display the selected note
+    function displaySelectedNote() {
+      let noteList = document.getElementById('noteList');
+      let displayTitle = document.getElementById('displayTitle');
+      let displayContent = document.getElementById('displayContent');
 
-  if (noteList.selectedIndex !== -1) {
-    let notes = getSavedNotes();
-    let selectedNote = notes[noteList.selectedIndex];
-    displayTitle.textContent = selectedNote.title;
-    displayContent.innerText = selectedNote.content;
-  } else {
-    displayTitle.textContent = '';
-    displayContent.innerText = '';
-  }
-}
+      if (noteList.selectedIndex !== -1) {
+        let notes = getSavedNotes();
+        let selectedNote = notes[noteList.selectedIndex];
+        displayTitle.textContent = selectedNote.title;
+        displayContent.innerText = selectedNote.content;
+      } else {
+        displayTitle.textContent = '';
+        displayContent.innerText = '';
+      }
+    }
 
 
 
@@ -191,4 +250,5 @@ function displaySelectedNote() {
     displayNotes();
   </script>
 </body>
+
 </html>
