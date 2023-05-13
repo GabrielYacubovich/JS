@@ -46,6 +46,7 @@ export function resetSearch() {
   resultsCountElement.textContent = ""; // Clear the results count
 }
 
+
 export function getUniqueCategories(snippetsData) {
   const categoriesCount = {};
   snippetsData.forEach(snippet => {
@@ -113,13 +114,18 @@ export async function createSnippets(container, snippetDataList, categoryFilterE
   const visibleSnippets = snippetsData.slice();
   visibleSnippets.forEach((snippet) => {
     const snippetDiv = document.createElement('div');
+    snippetDiv.innerHTML = ` 
+    <div>
+    <h3 class="title" data-categories="${snippet.categories.join(';')}">${snippet.title}</h3>
+    <pre class="snippet-code">
+        <div style= "width: 100%; background-color:#f5f2f0; padding:10px 10px 1px 10px; border-radius:10px"><code class="language-javascript">${snippet.code}</code>
+        <button class="copyButton">Copy</button><a class="glossaryLink" href="./indexGlossary.html#${snippet.title.replace(/\s+/g, '_').toLowerCase()}" target="_blank">Learn more...</a>
+        </div>
+    </pre>  
+</div>
 
-    snippetDiv.innerHTML = `
-      <div>
-        <h3 class="title" data-categories="${snippet.categories.join(';')}">${snippet.title}</h3>
-        <pre class="snippet-code"><code class="language-javascript">${snippet.code}</code><button class="copyButton">Copy</button></pre>
-      </div>
     `;
+  
     container.appendChild(snippetDiv);
     const codeElement = snippetDiv.querySelector("code");
     snippetDiv.querySelector("button.copyButton").addEventListener("click", (event) => copyText(event));

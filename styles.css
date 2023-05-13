@@ -7,19 +7,21 @@ pre {
   border-radius: 7px;
   margin-left: 100px !important;
   margin-right: 100px !important;
-  padding-top: 15px !important;
+  padding-top: 5px !important;
   white-space: pre-wrap;       /* Since CSS 2.1 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
   max-width: 100%;             /* Set the max-width of the content */
+  
 }
 code {
   font-size: 15px !important;
   margin: -2px !important;
    max-width: 100%;
   word-wrap: break-word; 
+  
 }
 #code-container {
   padding-top:220px;
@@ -111,16 +113,38 @@ border-radius: 15px;
 }
 
 .copyButton {
-  font-size: 14px;
+  font-size: 12px;
   display: block;
-  margin-left: -5px;
-  margin-top:10px;  
+  margin-left: -2px;
+  margin-top:0px;  
+  margin-bottom: 20px;
   background-color: white;
   border-radius: 15px;
-  padding-bottom: 2px;
   cursor: pointer;
-  padding: 3px 11px 4px 11px ;
+  padding: 2px 13px 2px 13px ;
   width: 60px;
+  border:1px solid black;
+}
+
+.copyButton:hover {
+  font-weight: bold;
+  color: rgb(23, 23, 23);
+  padding: 2px 12px 2px 12px ;
+
+}
+
+.glossaryLink{
+  color: black;
+font-size: 10px;
+text-decoration: none;
+cursor: pointer;
+margin-top: 16px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.glossaryLink:hover {
+  color: black;
+  font-weight: 600  ;
 }
 .resetButtonBottom {
   border-radius: 15px;
@@ -180,31 +204,6 @@ border-radius: 15px;
 }
 
 .encodeButton:hover {
-  background-color: rgb(234, 234, 234);
-  color: white;
-  background-position: right center; /* change the direction of the change here */
-
-
-}
-
-.glossaryButton {
-  border-radius: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px 19px;
-  margin-right: 10px;
-  background-color: rgb(49, 50, 54);
-  border: solid 1px rgb(49, 50, 54) ;
-  color: white;
-  background-image: linear-gradient(to right, #780206 0%, #061161  51%, #780206  100%);  
-  text-align: center;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  float:left;
-}
-
-.glossaryButton:hover {
   background-color: rgb(234, 234, 234);
   color: white;
   background-position: right center; /* change the direction of the change here */
@@ -328,7 +327,7 @@ width: 18%;  }
   .title {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
-    
+    margin-top: 35px;
     padding-top: 0px !important;
     margin-bottom: 20px;
     padding-left: 100px;
@@ -391,6 +390,7 @@ width: 18%;  }
     margin-bottom: 400px; 
     overflow: hidden;
   }
+  
   .title {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
@@ -398,7 +398,9 @@ width: 18%;  }
     padding-left: 30px;
     padding-right: 30px;
   }
+  
   pre {
+    
     margin-left: 20px !important;
     margin-right: 20px !important;
     
@@ -418,11 +420,14 @@ width: 18%;  }
   .pdfButton {
     display: none;
   }
+  .glossaryLink {
+    
+    margin-left: 30px;
+    }
+
   .buttonsBottomDiv {
     width: 100% !important;
     margin-left: 20px;
-  
-
   }
   .resetButtonBottom{
   float:left;
