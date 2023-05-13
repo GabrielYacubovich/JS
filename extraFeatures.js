@@ -26,6 +26,11 @@ export function notesButton() {
   window.open(notesUrl, '_blank');
 }
 
+export function glossaryButton() {
+  const glossaryUrl = './indexGlossary.html';
+  window.open(glossaryUrl, '_blank');
+}
+
 // Fetch data from CSV
 export async function fetchCSVData(file) {
   try {

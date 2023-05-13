@@ -1,4 +1,4 @@
-body {
+﻿body {
   margin: 0 !important;
 }
 pre {
@@ -68,6 +68,7 @@ p {
 }
 .searchInput {
 padding: 5.5px;
+border: 1px black solid;
 width: 200px;
 margin-right:10px;
 border-radius: 15px;
@@ -124,7 +125,8 @@ border-radius: 15px;
 .resetButtonBottom {
   border-radius: 15px;
   display: block;
-  padding: 6px 19px;
+  margin-top: 10px;
+  padding: 5px 9px;
   float:left;
   border: 1px black solid;
   background-color: rgb(242, 242, 242);
@@ -132,8 +134,9 @@ border-radius: 15px;
 
 .pdfButton {
   border-radius: 15px;
+  margin-top: 10px;
   display: block;
-  padding: 6px 19px;
+  padding: 5px 9px;
   float:right;
   background-color: rgb(242, 242, 242);
   border: 1px black solid;
@@ -177,6 +180,31 @@ border-radius: 15px;
 }
 
 .encodeButton:hover {
+  background-color: rgb(234, 234, 234);
+  color: white;
+  background-position: right center; /* change the direction of the change here */
+
+
+}
+
+.glossaryButton {
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 19px;
+  margin-right: 10px;
+  background-color: rgb(49, 50, 54);
+  border: solid 1px rgb(49, 50, 54) ;
+  color: white;
+  background-image: linear-gradient(to right, #780206 0%, #061161  51%, #780206  100%);  
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  float:left;
+}
+
+.glossaryButton:hover {
   background-color: rgb(234, 234, 234);
   color: white;
   background-position: right center; /* change the direction of the change here */
