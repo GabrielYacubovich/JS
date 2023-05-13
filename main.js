@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector("button[onclick='openConsoleEditor()']").addEventListener("click", openConsoleEditor);
   document.querySelector("button.notesButton").addEventListener("click", notesButton);
 
-   document.querySelector("button[onclick='glossaryButton()']").addEventListener("click", glossaryButton);
+
 
   const categoryFilterElement = document.querySelector('#categoryFilter');
   const snippetsData = await fetchCSVData('snippets.csv');
