@@ -1,4 +1,4 @@
-﻿body {
+body {
   margin: 0 !important;
 }
 pre {
@@ -165,14 +165,21 @@ border-radius: 15px;
   margin-top: 20px;
   padding: 5px 9px;
   margin-right: 10px;
-  background-color: rgb(42, 42, 42);
+  background-color: rgb(49, 50, 54);
+  border: solid 1px rgb(49, 50, 54) ;
   color: white;
-  border: solid black 1px;
+  background-image: linear-gradient(to right, #780206 0%, #061161  51%, #780206  100%);  
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
 }
 
 .encodeButton:hover {
   background-color: rgb(234, 234, 234);
-  color: black;
+  color: white;
+  background-position: right center; /* change the direction of the change here */
+
 
 }
 
@@ -184,26 +191,39 @@ border-radius: 15px;
   background-color: rgb(49, 50, 54);
   border: solid 1px rgb(49, 50, 54) ;
   color: white;
+  background-image: linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%);
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
 }
 
 .consoleEditorButton:hover {
   background-color: rgb(234, 234, 234);
-  color: black;
+  color: white;
+  background-position: right center; /* change the direction of the change here */
 
 }
+
 
 .notesButton {
   border-radius: 15px;
   margin-top: 20px;
   padding: 5px 9px;
   margin-right: 10px;
-  background-color: rgb(249, 249, 162);
+  background-color: rgb(255, 255, 222);
   border: 2px rgb(31, 31, 31) solid;
+  background-image: linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%);
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
 }
 
 .notesButton:hover {
-  background-color: rgb(239, 239, 132); 
-  color: black;
+  background-color: rgb(246, 246, 181); 
+  color: white;
+  background-position: right center; /* change the direction of the change here */
+
 }
 
 .buttons-wrapper {
