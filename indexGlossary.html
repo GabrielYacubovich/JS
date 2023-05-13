@@ -75,6 +75,7 @@
 
 
     <script>
+        
         async function fetchCSV() {
             const response = await fetch('snippets.csv'); // Replace with your CSV file path
             const reader = response.body.getReader();
@@ -99,17 +100,41 @@
             }).sort((a, b) => a.title.localeCompare(b.title)); // Sort alphabetically by title
         }
 
-        async function loadSnippets() {
-            const csvContent = await fetchCSV();
-            const snippets = parseCSV(csvContent);
+        async function loadSnippets(ignoreUrlHash = false) {
+    const csvContent = await fetchCSV();
+    const snippets = parseCSV(csvContent);
 
-            const searchInput = document.getElementById('search');
-            searchInput.addEventListener('input', function () {
-                displaySnippets(snippets.filter(snippet => snippet.title.toLowerCase().includes(searchInput.value.toLowerCase())));
-            });
+    const searchInput = document.getElementById('search');
 
-            displaySnippets(snippets);
-        }
+    let urlHash = '';
+    if (!ignoreUrlHash) {
+        // Get the hash part of the URL (remove the '#' character at the start)
+        urlHash = window.location.hash.substr(1);
+
+        // Replace underscore with space and convert the string to title case
+        urlHash = urlHash.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    }
+
+    // Set the hash part as the value of the search input
+    searchInput.value = urlHash;
+
+    // Add event listener for the search input
+    searchInput.addEventListener('input', function () {
+        displaySnippets(snippets.filter(snippet => snippet.title.toLowerCase().includes(searchInput.value.toLowerCase())));
+    });
+
+    // Execute the search using the hash part as the search term
+    displaySnippets(snippets.filter(snippet => snippet.title.toLowerCase().includes(urlHash.toLowerCase())));
+}
+
+document.getElementById('resetButton').addEventListener('click', function () {
+    const searchInput = document.getElementById('search');
+    searchInput.value = '';
+    window.location.hash = '';
+    loadSnippets(true);
+});
+
+
 
         function displaySnippets(snippets) {
             const contentDiv = document.getElementById('content');
