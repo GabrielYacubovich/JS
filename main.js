@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.scrollTo(0, 0);
   });
   document.getElementById("generatePDFButton").addEventListener("click", generatePDF);
+  document.querySelector("button[onclick='glossaryButton()']").addEventListener("click", glossaryButton);
+
 
   document.querySelector("button[onclick='openEncoder()']").addEventListener("click", openEncoder);
   document.querySelector("button[onclick='openConsoleEditor()']").addEventListener("click", openConsoleEditor);

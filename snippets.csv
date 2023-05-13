@@ -3,10 +3,6 @@ title,code,categories,glossary
 @
 @ if a category appears duplicate, check the extra spaces
 
-1Test Using template literals to concatenate strings and variables,let firstName = "John";%nl%let lastName = "Doe";%nl%let fullName = `${firstName} ${lastName}`;%nl%console.log(fullName); // Output: "John Doe",JavaScript;Strings;Template Literals, Glossary is gonna be a long piece of text here, bla bla bla...
-
-2Test Using template literals to concatenate strings and variables,let firstName = "John";%nl%let lastName = "Doe";%nl%let fullName = `${firstName} ${lastName}`;%nl%console.log(fullName); // Output: "John Doe",JavaScript;Strings;Template Literals, Glossary is gonna be a long piece of text here, bla bla bla...
-
 Using template literals to concatenate strings and variables,let firstName = "John";%nl%let lastName = "Doe";%nl%let fullName = `${firstName} ${lastName}`;%nl%console.log(fullName); // Output: "John Doe",JavaScript;Strings;Template Literals,
 
 Using the Array.every method to check if all elements in an array pass a test,let numbers = [10&#x2c 20&#x2c 30&#x2c 40&#x2c 50];%nl%let allGreaterThan5 = numbers.every((num) => num > 5);%nl%console.log(allGreaterThan5); // Output: true,JavaScript;Arrays;Methods,
@@ -25,7 +21,7 @@ Using the Array.prototype.map method to iterate over an array,let numbers = [1&#
 
 Creating a JavaScript object,let person = { %nl% firstName: "John"&#x2c; %nl% lastName: "Doe"&#x2c; %nl% age: 30 %nl%}; %nl%console.log(person);,JavaScript;Objects,
 
-Adding properties to an object,let person = {}; %nl%person.firstName = "John"; %nl%person.lastName = "Doe"; %nl%person.age = 30; %nl%console.log(person);,JavaScript;Objects,
+Adding properties to an object,let person = {}; %nl%person.firstName = "John"; %nl%person.lastName = "Doe"; %nl%person.age = 30; %nl%console.log(person);,JavaScript;Objects,Lorem ipsum dolor sit amet&#x2c; consectetur adipiscing elit. Nullam finibus&#x2c;sapien nec rutrum facilisis&#x2c; ante lorem aliquam.
 
 Basic for loop,for (let i = 0&#x2c; i < 10&#x2c; i++) { %nl% console.log(i); %nl%},JavaScript;Loops,
 
@@ -33,12 +29,13 @@ Basic while loop,let i = 0; %nl%while (i < 10) { %nl% console.log(i); %nl% i++; 
 
 Array forEach method,const arr = [1&#x2c; 2&#x2c; 3]; %nl%arr.forEach(function (item) { %nl% console.log(item); %nl%});,JavaScript;Arrays;Loops,
 
-Anonymous function,const myFunc = function () { %nl% console.log("This is an anonymous function"); %nl%}; %nl%myFunc();,JavaScript;Functions,
+Anonymous function,const myFunc = function () { %nl% console.log("This is an anonymous function"); %nl%}; %nl%myFunc();,JavaScript;Functions,Lorem ipsum dolor sit amet&#x2c; consectetur adipiscing elit. Nullam finibus&#x2c;sapien nec rutrum facilisis&#x2c; ante lorem aliquam.
 
 Arrow function,const myFunc = () => { %nl% console.log("This is an arrow function"); %nl%}; %nl%myFunc();,JavaScript;Functions;ES6,
 
-Adding items to an array,const arr = []; %nl%arr.push(1); %nl%arr.push(2); %nl%arr.push(3); %nl%console.log(arr);,JavaScript;Arrays,
-Accessing array elements,const arr = [1&#x2c; 2&#x2c; 3]; %nl%console.log(arr[0]); %nl%console.log(arr[1]); %nl%console.log(arr[2]);,JavaScript;Arrays,
+Adding items to an array,const arr = []; %nl%arr.push(1); %nl%arr.push(2); %nl%arr.push(3); %nl%console.log(arr);,JavaScript;Arrays,Lorem ipsum dolor sit amet&#x2c; consectetur adipiscing elit. Nullam finibus&#x2c;sapien nec rutrum facilisis&#x2c; ante lorem aliquam.
+
+Accessing array elements,const arr = [1&#x2c; 2&#x2c; 3]; %nl%console.log(arr[0]); %nl%console.log(arr[1]); %nl%console.log(arr[2]);,JavaScript;Arrays,Lorem ipsum dolor sit amet&#x2c; consectetur adipiscing elit. Nullam finibus&#x2c;sapien nec rutrum facilisis&#x2c; ante lorem aliquam.
 
 Basic if-else statement,let number = 42; %nl%if (number % 2 === 0) { %nl% console.log("Even"); %nl%} else { %nl% console.log("Odd"); %nl%},JavaScript;Control Flow,
 
@@ -56,13 +53,13 @@ Creating a JavaScript class,class Person { %nl% constructor(firstName&#x2c; last
 
 Using try-catch,try { %nl% console.log(variableThatDoesNotExist); %nl%} catch (error) { %nl% console.log("An error occurred: " + error.message); %nl%},JavaScript;Error Handling,
 
-Adding event listener,document.getElementById("myButton").addEventListener("click"&#x2c; () => { %nl% console.log("Button clicked!"); %nl%});,JavaScript;DOM;Event Handling,
+Adding event listener,document.getElementById("myButton").addEventListener("click"&#x2c; () => { %nl% console.log("Button clicked!"); %nl%});,JavaScript;DOM;Event Handling,Lorem ipsum dolor sit amet&#x2c; consectetur adipiscing elit. Nullam finibus&#x2c;sapien nec rutrum facilisis&#x2c; ante lorem aliquam.
 
 Using Array.reduce,let numbers = [1&#x2c; 2&#x2c; 3&#x2c; 4]; %nl%const sum = numbers.reduce((accumulator&#x2c; currentValue) => accumulator + currentValue&#x2c; 0); %nl%console.log(sum);,JavaScript;Arrays;Methods,
 
 String Interpolation,let name = "John"; %nl%let age = 30; %nl%let message = `Hello&#x2c; my name is ${name} and I am ${age} years old.`; %nl%console.log(message);,JavaScript;Strings;Template literals,
 
-Array Destructuring,let numbers = [1&#x2c; 2&#x2c; 3]; %nl%const [first&#x2c; second&#x2c; third] = numbers; %nl%console.log(first&#x2c; second&#x2c; third);,JavaScript;Arrays;Destructuring,
+Array Destructuring,let numbers = [1&#x2c; 2&#x2c; 3]; %nl%const [first&#x2c; second&#x2c; third] = numbers; %nl%console.log(first&#x2c; second&#x2c; third);,JavaScript;Arrays;Destructuring,Lorem ipsum dolor sit amet&#x2c; consectetur adipiscing elit. Nullam finibus&#x2c;sapien nec rutrum facilisis&#x2c; ante lorem aliquam.
 
 Spread Operator with Arrays,let arr1 = [1&#x2c; 2&#x2c; 3]; %nl%let arr2 = [4&#x2c; 5&#x2c; 6]; %nl%let combinedArr = [...arr1&#x2c; ...arr2]; %nl%console.log(combinedArr);,JavaScript;Arrays;Spread Operator,
 
@@ -110,9 +107,9 @@ Using the Object.values method to get an array of object values,let person = {fi
 
 Using the Object.entries method to get an array of object key-value pairs,let person = {firstName: "John"&#x2c lastName: "Doe"&#x2c age: 30}; %nl%let entries = Object.entries(person); %nl%console.log(entries); // Output: [["firstName"&#x2c "John"]&#x2c ["lastName"&#x2c "Doe"]&#x2c ["age"&#x2c 30]],JavaScript;Objects;Methods,
 
-Accessing array values,console.log(MyArray[0]);console.log(MyArray[MyArray.length - 1]);,JavaScript;Arrays,
+Accessing array values,console.log(MyArray[0]);console.log(MyArray[MyArray.length - 1]);,JavaScript;Arrays,Lorem ipsum dolor sit amet&#x2c; consectetur adipiscing elit. Nullam finibus&#x2c;sapien nec rutrum facilisis&#x2c; ante lorem aliquam.
 
-Adding a value to the end of an array,MyArray.push(100);console.log(MyArray);,JavaScript;Arrays;Methods,
+Adding a value to the end of an array,MyArray.push(100);console.log(MyArray);,JavaScript;Arrays;Methods,Lorem ipsum dolor sit amet&#x2c; consectetur adipiscing elit. Nullam finibus&#x2c;sapien nec rutrum facilisis&#x2c; ante lorem aliquam.
 
 Removing a value from an array,MyArray.splice(0&#x2c 1);console.log(MyArray);,JavaScript;Arrays;Methods,
 

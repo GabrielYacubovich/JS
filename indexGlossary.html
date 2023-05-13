@@ -136,29 +136,39 @@ document.getElementById('resetButton').addEventListener('click', function () {
 
 
 
-        function displaySnippets(snippets) {
-            const contentDiv = document.getElementById('content');
-            contentDiv.innerHTML = ''; // Clear the content
+function displaySnippets(snippets) {
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = ''; // Clear the content
+    let encodedGlossary = '';
 
-            snippets.forEach(snippet => {
-                if (snippet.title && snippet.glossary) {
-                    const snippetDiv = document.createElement('div');
-                    snippetDiv.classList.add('snippet');
+    snippets.forEach(snippet => {
+        if (snippet.title && snippet.glossary) {
+            const snippetDiv = document.createElement('div');
+            snippetDiv.classList.add('snippet');
 
-                    const titleDiv = document.createElement('div');
-                    titleDiv.classList.add('title');
-                    titleDiv.textContent = snippet.title;
-                    snippetDiv.appendChild(titleDiv);
+            const titleDiv = document.createElement('div');
+            titleDiv.classList.add('title');
+            titleDiv.textContent = snippet.title;
+            snippetDiv.appendChild(titleDiv);
 
-                    const glossaryDiv = document.createElement('div');
-                    glossaryDiv.classList.add('glossary');
-                    glossaryDiv.textContent = snippet.glossary;
-                    snippetDiv.appendChild(glossaryDiv);
+            const glossaryDiv = document.createElement('div');
+            glossaryDiv.classList.add('glossary');
 
-                    contentDiv.appendChild(snippetDiv);
-                }
+            // Check if the glossary content contains a comment
+            const commentRegex = /<!--([\s\S]*?)-->/g;
+             encodedGlossary = snippet.glossary.replace(commentRegex, (match, comment) => {
+                // Encode the comment
+                return comment.replace(/,/g, '&#x2c;');
             });
+
+            glossaryDiv.innerHTML = encodedGlossary;
+            snippetDiv.appendChild(glossaryDiv);
+
+            contentDiv.appendChild(snippetDiv);
         }
+    });
+}
+
         document.getElementById("generatePDFButton").addEventListener("click", generatePDF);
         document.getElementById('resetButton').addEventListener('click', function () {
             const searchInput = document.getElementById('search');
