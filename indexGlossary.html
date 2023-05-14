@@ -55,11 +55,55 @@
             margin-right: 10px;
             background-color: rgb(242, 242, 242);
             border: 1px black solid;
+
         }
+
+        .resetButton {
+            border-radius: 15px;
+            margin-top: 20px;
+            padding: 5px 9px;
+            margin-right: 10px;
+            background-color: rgb(242, 242, 242);
+            border: 1px black solid;
+        }
+
+        .container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.white-stripe {
+  background-color: white;
+  border-top: 1px solid red;
+  position: fixed;
+  bottom: 0;
+  margin-top:10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100px;
+  z-index: 9998;
+}
+
+#resetButton2 {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 9999;
+}
+
 
         #resetButton:hover {
             background-color: rgb(255, 255, 255);
 
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .pdfButton {
+                display: none;
+            }
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
@@ -68,14 +112,22 @@
 <body>
     <div style="padding: 30px 30px 10px;font-size: 40px;">Glossary</div>
     <div style="height: 2px;color:red; background-color: red; margin: 0px 30px 40px ;"></div>
-    <input type="text" id="search" placeholder="Search..." /><button id="resetButton">Reset Search</button>
+    <input type="text" id="search" placeholder="Search..." autocomplete="off" /><button id="resetButton">Reset Search</button>
 
     <button class="pdfButton" id="generatePDFButton">Generate PDF</button>
-    <div style="padding: 0px 30px;" id="content"></div>
+    <div class="container">
+        <div class="content">
+            <div style="padding: 0px 30px;" id="content"></div>
+        </div>
+        <div class="white-stripe2"></div>
+        <div class="white-stripe">
+
+        <button id="resetButton2" class="resetButton" onclick="scrollToTop()">Reset</button></div>
+    </div>
 
 
     <script>
-        
+
         async function fetchCSV() {
             const response = await fetch('snippets.csv'); // Replace with your CSV file path
             const reader = response.body.getReader();
@@ -90,6 +142,12 @@
 
             return csvContent;
         }
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
 
         function parseCSV(csvContent) {
             const lines = csvContent.split('\n');
@@ -101,73 +159,73 @@
         }
 
         async function loadSnippets(ignoreUrlHash = false) {
-    const csvContent = await fetchCSV();
-    const snippets = parseCSV(csvContent);
+            const csvContent = await fetchCSV();
+            const snippets = parseCSV(csvContent);
 
-    const searchInput = document.getElementById('search');
+            const searchInput = document.getElementById('search');
 
-    let urlHash = '';
-    if (!ignoreUrlHash) {
-        // Get the hash part of the URL (remove the '#' character at the start)
-        urlHash = window.location.hash.substr(1);
+            let urlHash = '';
+            if (!ignoreUrlHash) {
+                // Get the hash part of the URL (remove the '#' character at the start)
+                urlHash = window.location.hash.substr(1);
 
-        // Replace underscore with space and convert the string to title case
-        urlHash = urlHash.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-    }
+                // Replace underscore with space and convert the string to title case
+                urlHash = urlHash.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            }
 
-    // Set the hash part as the value of the search input
-    searchInput.value = urlHash;
+            // Set the hash part as the value of the search input
+            searchInput.value = urlHash;
 
-    // Add event listener for the search input
-    searchInput.addEventListener('input', function () {
-        displaySnippets(snippets.filter(snippet => snippet.title.toLowerCase().includes(searchInput.value.toLowerCase())));
-    });
-
-    // Execute the search using the hash part as the search term
-    displaySnippets(snippets.filter(snippet => snippet.title.toLowerCase().includes(urlHash.toLowerCase())));
-}
-
-document.getElementById('resetButton').addEventListener('click', function () {
-    const searchInput = document.getElementById('search');
-    searchInput.value = '';
-    window.location.hash = '';
-    loadSnippets(true);
-});
-
-
-
-function displaySnippets(snippets) {
-    const contentDiv = document.getElementById('content');
-    contentDiv.innerHTML = ''; // Clear the content
-    let encodedGlossary = '';
-
-    snippets.forEach(snippet => {
-        if (snippet.title && snippet.glossary) {
-            const snippetDiv = document.createElement('div');
-            snippetDiv.classList.add('snippet');
-
-            const titleDiv = document.createElement('div');
-            titleDiv.classList.add('title');
-            titleDiv.textContent = snippet.title;
-            snippetDiv.appendChild(titleDiv);
-
-            const glossaryDiv = document.createElement('div');
-            glossaryDiv.classList.add('glossary');
-
-            // Check if the glossary content contains a comment
-            const commentRegex = /<!--([\s\S]*?)-->/g;
-             encodedGlossary = snippet.glossary.replace(commentRegex, (match, comment) => {
-                // Encode the comment
-                return comment.replace(/,/g, '&#x2c;');
+            // Add event listener for the search input
+            searchInput.addEventListener('input', function () {
+                displaySnippets(snippets.filter(snippet => snippet.title.toLowerCase().includes(searchInput.value.toLowerCase())));
             });
 
-            glossaryDiv.innerHTML = encodedGlossary;
-            snippetDiv.appendChild(glossaryDiv);
-
-            contentDiv.appendChild(snippetDiv);
+            // Execute the search using the hash part as the search term
+            displaySnippets(snippets.filter(snippet => snippet.title.toLowerCase().includes(urlHash.toLowerCase())));
         }
-    });
-}
+
+        document.getElementById('resetButton').addEventListener('click', function () {
+            const searchInput = document.getElementById('search');
+            searchInput.value = '';
+            window.location.hash = '';
+            loadSnippets(true);
+        });
+
+
+
+        function displaySnippets(snippets) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = ''; // Clear the content
+            let encodedGlossary = '';
+
+            snippets.forEach(snippet => {
+                if (snippet.title && snippet.glossary) {
+                    const snippetDiv = document.createElement('div');
+                    snippetDiv.classList.add('snippet');
+
+                    const titleDiv = document.createElement('div');
+                    titleDiv.classList.add('title');
+                    titleDiv.textContent = snippet.title;
+                    snippetDiv.appendChild(titleDiv);
+
+                    const glossaryDiv = document.createElement('div');
+                    glossaryDiv.classList.add('glossary');
+
+                    // Check if the glossary content contains a comment
+                    const commentRegex = /<!--([\s\S]*?)-->/g;
+                        encodedGlossary = snippet.glossary.replace(commentRegex, (match, comment) => {
+                            // Encode the comment
+                            return comment.replace(/,/g, '&#x2c;');
+                        });
+
+                    glossaryDiv.innerHTML = encodedGlossary;
+                    snippetDiv.appendChild(glossaryDiv);
+
+                    contentDiv.appendChild(snippetDiv);
+                }
+            });
+        }
 
         document.getElementById("generatePDFButton").addEventListener("click", generatePDF);
         document.getElementById('resetButton').addEventListener('click', function () {
