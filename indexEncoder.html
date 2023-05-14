@@ -3,7 +3,6 @@
 
 <head>
     <link rel="icon" href="encoder.ico" type="image/x-icon">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Format Converter</title>
@@ -13,9 +12,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
         }
-
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
 
         textarea,
         .output-box {
@@ -24,15 +27,19 @@
             resize: none;
             width: 90%;
             margin-bottom: 20px;
-            border: 1px solid gray;
+            border: 1px solid bla;
             border-radius: 6px;
-
         }
 
         .output-box {
+            width: 100%;
+            padding: 5px;
             width: 90%;
-
-            margin-bottom: 60px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            border-radius: 6px;
+            
 
         }
 
@@ -44,6 +51,7 @@
             margin-bottom: 20px;
             border: 1px solid gray;
             border-radius: 6px;
+            
         }
 
         button {
@@ -54,30 +62,27 @@
             color: rgb(72, 42, 42);
             font-size: 40px;
             margin-bottom: 10px;
-
         }
 
         .header2 {
             color: rgb(51, 42, 73);
             font-size: 40px;
             margin-bottom: 10px;
-
         }
 
         .divider {
             height: 2px;
             background-color: red;
             width: 100%;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             width: 90%;
-
         }
 
         .encodeButton {
             border-radius: 15px;
-            margin-top:0px;
-            margin-bottom:40px;
-            padding: 5px 9px;
+            margin-top: 0px;
+            margin-bottom: 40px;
+            padding: 5px 15px;
             margin-right: 10px;
             background-color: rgb(49, 50, 54);
             border: solid 1px rgb(49, 50, 54);
@@ -94,49 +99,68 @@
             color: white;
             background-position: right center;
         }
+
+        .form-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .form-container label {
+            margin-right: 10px;
+            margin-left: 50px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            margin-bottom: 20px;
+            margin-right: 50px;
+            width: 100%;
+            min-width: 100px;
+        }
+
+        .csvResults {
+            border: red 4px double;
+        }
+     
     </style>
 </head>
 
 <body>
-    <h1 class="header1">Add new case</h1>
+    <h1 class="header1">Create new case</h1>
     <div class="divider"></div>
+    
     <label for="title">Title:</label>
-    <input id="title" class="input-field" type="text">
+    <input type="text" class="input-field" id="title" name="title">
+    <label for="categories">Categories:</label>
+    <input type="text" class="input-field" id="categories" name="categories">
+
     <label for="code">Code:</label>
     <input id="code" class="input-field" type="text">
-    <label for="categories">Categories:</label>
-    <input id="categories" class="input-field" type="text">
     <label for="glossary">Glossary:</label>
     <input id="glossary" class="input-field" type="text">
-    <button class="encodeButton" onclick="addNewCase()">Add New Case</button>
-    <label for="newCaseOutput">New Case Output:</label>
-    <textarea class="input-field" id="newCaseOutput" readonly class="output-box"></textarea>
-
-
+    <button class="encodeButton" onclick="addNewCase()">Create</button>
     <h2 class="header2">Format Converter</h2>
     <div class="divider"></div>
-    <p>Syntax example:<br>
+    <p style="font-size: 12px; line-height: 16px; margin-bottom: 20px; color: rgb(69, 69, 69)"><b>Syntax example:</b><br>
         Using the Object.values method to get an array of object values,<br>
         let person = {firstName: "John", lastName: "Doe", age: 30};<br>
         let values = Object.values(person);<br>
         console.log(values); // Output: ["John", "Doe", 30],<br>
         JavaScript;Objects;Methods,<br></p>
-    <label for="inputFormatA">Input (FORMAT A):</label>
-    <textarea  class="input-field" id="inputFormatA"></textarea>
+    <label for="inputFormatA"><b>Input your code:</b></label>
+    <textarea class="input-field" id="inputFormatA"></textarea>
     <button class="encodeButton" onclick="convert()">Encode</button>
-    <label for="outputFormatB">Output (FORMAT B):</label>
-    <textarea class="input-field" id="outputFormatB" readonly></textarea>
-    <label for="notepad">Notepad:</label>
-    <textarea class="input-field" style="border:2px black solid" id="notepad"></textarea>
-    <label for="csvContent">CSV Content:</label>
-    <textarea class="input-field" id="csvContent"></textarea>
+    <label for="newCaseOutput"><b>New Case Output:</b></label>
+    <textarea class="output-box" id="newCaseOutput" readonly class="output-box"></textarea>
+    <button class="encodeButton" onclick="clearOutput()">Clear Output</button>
+    <label for="csvContent"><b>CSV Content:</b></label>
+    <textarea class="input-field csvResults" id="csvContent"></textarea>
     <button class="encodeButton" onclick="addToCSV()">Download CSV</button>
-
-
+    
 
     <script>
         let csvContent = ""; // Store the CSV content
-
         function encodeFormatAtoB(input) {
             const endsWithComma = input.endsWith(",");
             const normalizedInput = input.replace(/(\r\n|\n|\r)/g, '%nl%');
@@ -144,30 +168,32 @@
             const encoded = encodedCommas.replace(/&#x2c%nl%/g, ',');
             return endsWithComma ? encoded.slice(0, -5) + ",\n" : encoded;
         }
-
         function convert() {
             const inputFormatA = document.getElementById("inputFormatA");
-            const outputFormatB = document.getElementById("outputFormatB");
-
+            const outputFormatB = document.getElementById("newCaseOutput");
             const encodedText = encodeFormatAtoB(inputFormatA.value);
-            outputFormatB.value = encodedText;
-
-            const notepad = document.getElementById("notepad");
-            notepad.value += encodedText + '\n';
-
+            outputFormatB.value += encodedText + '\n';
             // Update the CSV content
             csvContent += encodedText;
         }
+        function clearOutput() {
+    const outputFormatB = document.getElementById("newCaseOutput");
+    outputFormatB.value = "";
+}
 
-        function addToCSV() {
+
+        async function addToCSV() {
             const csvContentInput = document.getElementById("csvContent");
-            const content = csvContentInput.value.trim();
-
-            if (content.length > 0) {
-                csvContent += content + '\n';
+            const newContent = csvContentInput.value.trim();
+            // Fetch the existing content from the CSV file
+            let response = await fetch('snippets.csv');
+            let existingContent = await response.text();
+            // Append the new content to the existing content
+            csvContent = existingContent;
+            if (newContent.length > 0) {
+                csvContent += newContent + '\n';
                 csvContentInput.value = "";
-
-                // Save the CSV content to snippets.csv
+                // Provide the updated content for download
                 const csvData = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent);
                 const link = document.createElement('a');
                 link.setAttribute('href', csvData);
@@ -178,31 +204,25 @@
                 document.body.removeChild(link);
             }
         }
-
         function addNewCase() {
             const title = document.getElementById("title");
             const code = document.getElementById("code");
             const categories = document.getElementById("categories");
             const glossary = document.getElementById("glossary");
             const newCaseOutput = document.getElementById("newCaseOutput");
-
             // We'll encode the commas inside the code and glossary fields here
             const encodedCode = code.value.replace(/,/g, '&#x2c');
             const encodedGlossary = glossary.value.replace(/,/g, '&#x2c');
-
             const caseInput = `${title.value},\n${encodedCode},\n${categories.value},\n${encodedGlossary},\n`;
             const encodedCase = encodeFormatAtoB(caseInput);
-
-            newCaseOutput.value = encodedCase;
+            newCaseOutput.value += encodedCase + '\n\n';
             csvContent += encodedCase;
-
             // Clear input fields after adding
             title.value = "";
             code.value = "";
             categories.value = "";
             glossary.value = "";
         }
-
     </script>
 </body>
 
