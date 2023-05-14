@@ -75,13 +75,24 @@
 .white-stripe {
   background-color: white;
   border-top: 1px solid red;
+  margin-top: 500px; /* Add margin-top of 5px to create separation */
   position: fixed;
   bottom: 0;
-  margin-top:10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 95%;
   height: 100px;
+  z-index: 9998;
+}
+.white-stripe2 {
+  background-color: white;
+  margin-top: 500px; /* Add margin-top of 5px to create separation */
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: 120px;
   z-index: 9998;
 }
 
@@ -119,11 +130,11 @@
         <div class="content">
             <div style="padding: 0px 30px;" id="content"></div>
         </div>
-        <div class="white-stripe2"></div>
+        <div class="white-stripe2">
         <div class="white-stripe">
 
         <button id="resetButton2" class="resetButton" onclick="scrollToTop()">Reset</button></div>
-    </div>
+    </div></div>
 
 
     <script>
