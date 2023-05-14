@@ -1,4 +1,4 @@
-﻿body {
+body {
   margin: 0 !important;
 }
 pre {
@@ -232,8 +232,6 @@ font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(234, 234, 234);
   color: white;
   background-position: right center; /* change the direction of the change here */
-
-
 }
 
 .consoleEditorButton {
@@ -369,6 +367,7 @@ width: 18%;  }
   #categoryFilter {
     display: none;
   }
+    
   .rubberDuck {
     max-width:35px;
     margin: 20px 30px 10px 40px;
@@ -447,7 +446,7 @@ width: 18%;  }
   }
   .glossaryLink {
     
-    margin-left: 30px;
+    margin-left: 0px;
     }
 
   .buttonsBottomDiv {
